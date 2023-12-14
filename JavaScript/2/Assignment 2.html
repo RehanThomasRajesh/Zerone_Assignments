@@ -45,9 +45,31 @@
         <input type="text" id="lastName" name="lastName" maxlength="50" required><br>
 
         <label>Date of Birth:</label>
-        <select id="dobDay" name="dobDay" required></select>
-        <select id="dobMonth" name="dobMonth" required></select>
-        <select id="dobYear" name="dobYear" required></select><br>
+        <select id="dobDay" name="dobDay" required>
+            <option value="">Day</option>
+            <!-- Add options for day here, for example: -->
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <!-- Add more options as needed -->
+        </select>
+        
+        <select id="dobMonth" name="dobMonth" required>
+            <option value="">Month</option>
+            <!-- Add options for month here, for example: -->
+            <option value="1">January</option>
+            <option value="2">February</option>
+            <!-- Add more options as needed -->
+        </select>
+        
+        <select id="dobYear" name="dobYear" required>
+            <option value="">Year</option>
+            <!-- Add options for year here, for example: -->
+            <option value="2022">2022</option>
+            <option value="2021">2021</option>
+            <!-- Add more options as needed -->
+        </select>
+        <br>
+        
 
         <label for="fatherName">Name of Father:</label>
         <input type="text" id="fatherName" name="fatherName" maxlength="50"><br>
@@ -96,7 +118,7 @@
             <option value="CHE">CHE</option>
         </select><br>
 
-        <label for="notes">Notes:</label>
+        <label for="notes">Notes:</label><br>
         <textarea id="notes" name="notes" cols="50" rows="5"></textarea><br>
 
         <button type="submit">Submit</button>
