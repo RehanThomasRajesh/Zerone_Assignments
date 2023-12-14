@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form</title>
+    <script>
+        function validateForm() {
+            var firstName = document.getElementById('firstName').value;
+            var lastName = document.getElementById('lastName').value;
+            var dobDay = document.getElementById('dobDay').value;
+            var dobMonth = document.getElementById('dobMonth').value;
+            var dobYear = document.getElementById('dobYear').value;
+            var fatherName = document.getElementById('fatherName').value;
+            var motherName = document.getElementById('motherName').value;
+            var gender = document.querySelector('input[name="gender"]:checked');
+            var nationality = document.getElementById('nationality').value;
+            var course = document.getElementById('course').value;
+            var specialization = document.getElementById('specialization').value;
+            var notes = document.getElementById('notes').value;
+
+            if (firstName.trim() === '' || lastName.trim() === '' || dobDay === '' || dobMonth === '' || dobYear === '' ||
+                gender === null || nationality === '' || course === '' || specialization === '' || notes.length > 250) {
+                alert('Please fill in all the mandatory fields correctly.');
+                return false;
+            }
+
+            if (firstName.length > 50 || lastName.length > 50 || fatherName.length > 50 || motherName.length > 50) {
+                alert('Input length should be less than 50 characters.');
+                return false;
+            }
+
+            return true;
+        }
+    </script>
+</head>
+
+<body>
+    <form id="registrationForm" onsubmit="return validateForm()">
+        <label for="firstName">First Name:</label>
+        <input type="text" id="firstName" name="firstName" maxlength="50" required><br>
+
+        <label for="lastName">Last Name:</label>
+        <input type="text" id="lastName" name="lastName" maxlength="50" required><br>
+
+        <label>Date of Birth:</label>
+        <select id="dobDay" name="dobDay" required></select>
+        <select id="dobMonth" name="dobMonth" required></select>
+        <select id="dobYear" name="dobYear" required></select><br>
+
+        <label for="fatherName">Name of Father:</label>
+        <input type="text" id="fatherName" name="fatherName" maxlength="50"><br>
+
+        <label for="motherName">Name of Mother:</label>
+        <input type="text" id="motherName" name="motherName" maxlength="50"><br>
+
+        <label>Gender:</label>
+        <label><input type="radio" name="gender" value="Male" required> Male</label>
+        <label><input type="radio" name="gender" value="Female" required> Female</label>
+        <label><input type="radio" name="gender" value="Other" required> Other</label><br>
+
+        <label for="nationality">Nationality:</label>
+        <select id="nationality" name="nationality" required>
+            <option value=""></option>
+            <option value="USA">USA</option>
+            <option value="UK">UK</option>
+            <option value="Australia">Australia</option>
+            <option value="China">China</option>
+            <option value="India">India</option>
+            <option value="Japan">Japan</option>
+            <option value="France">France</option>
+            <option value="Germany">Germany</option>
+            <option value="Brazil">Brazil</option>
+        </select><br>
+
+        <label for="course">Course:</label>
+        <select id="course" name="course" required>
+            <option value=""></option>
+            <option value="B.Tech">B.Tech</option>
+            <option value="M.Tech">M.Tech</option>
+            <option value="MCA">MCA</option>
+            <option value="M.Phil">M.Phil</option>
+            <option value="Ph. D">Ph. D</option>
+        </select><br>
+
+        <label for="specialization">Specialization:</label>
+        <select id="specialization" name="specialization" required>
+            <option <option value=""></option>
+            <option value="ECE">ECE</option>
+            <option value="CSE">CSE</option>
+            <option value="ME">ME</option>
+            <option value="PE">PE</option>
+            <option value="CE">CE</option>
+            <option value="AE">AE</option>
+            <option value="CHE">CHE</option>
+        </select><br>
+
+        <label for="notes">Notes:</label>
+        <textarea id="notes" name="notes" cols="50" rows="5"></textarea><br>
+
+        <button type="submit">Submit</button>
+    </form>
+</body>
+
+</html>
