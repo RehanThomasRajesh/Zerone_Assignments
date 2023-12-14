@@ -5,6 +5,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login Form</title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script>
         function validateForm() {
             var username = document.getElementById('username').value;
@@ -36,29 +42,32 @@
 </head>
 
 <body>
-    <form id="loginForm" onsubmit="return validateForm()" action="passwordrecovery.aspx">
-        <label for="username">Username:</label>
-        <input type="text" id="username" name="username" maxlength="50" required>
+    <div class="container mt-5">
+        <form id="loginForm" onsubmit="return validateForm()" action="passwordrecovery.aspx">
 
-        <br>
+            <div class="form-group">
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" class="form-control" maxlength="50" required>
+            </div>
 
-        <label for="password">Password:</label>
-        <input type="password" id="password" name="password" maxlength="50" required>
+            <div class="form-group">
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" class="form-control" maxlength="50" required>
+            </div>
 
-        <br>
+            <div class="form-group form-check">
+                <input type="checkbox" class="form-check-input" name="rememberCredentials">
+                <label class="form-check-label" for="rememberCredentials">Remember Credentials</label>
+            </div>
 
-        <label>
-            <input type="checkbox" name="rememberCredentials"> Remember Credentials
-        </label>
+            <a href="passwordrecovery.aspx">Forgot Password</a>
 
-        <br>
+            <button type="submit" class="btn btn-primary">Login</button>
 
-        <a href="passwordrecovery.aspx">Forgot Password</a>
+        </form>
+    </div>
 
-        <br>
 
-        <button type="submit">Login</button>
-    </form>
 </body>
 
 </html>
