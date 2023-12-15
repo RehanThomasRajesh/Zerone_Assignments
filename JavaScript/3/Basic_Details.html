@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('#submitBtn').click(function (e) {
+                $('.error-message').remove();
+
+                var firstname = $('#firstname').val();
+                if (firstname.trim() === '') {
+                    e.preventDefault();
+                    $('#firstname').after('<div class="text-danger error-message">Please enter your Firstname.</div>');
+                } else if (firstname.length > 50) {
+                    e.preventDefault();
+                    $('#firstname').after('<div class="text-danger error-message">Firstname should not exceed 50 characters.</div>');
+                }
+
+                var lastname = $('#lastname').val();
+                if (lastname.trim() === '') {
+                    e.preventDefault();
+                    $('#lastname').after('<div class="text-danger error-message">Please enter your Lastname.</div>');
+                } else if (lastname.length > 50) {
+                    e.preventDefault();
+                    $('#lastname').after('<div class="text-danger error-message">Lastname should not exceed 50 characters.</div>');
+                }
+
+                var dobDay = $('#dobDay').val();
+                var dobMonth = $('#dobMonth').val();
+                var dobYear = $('#dobYear').val();
+                if (dobDay === '' || dobMonth === '' || dobYear === '') {
+                    e.preventDefault();
+                    $('#dobYear').after('<div class="text-danger error-message">Please enter your Date of Birth.</div>');
+                }
+
+                var gender = $('input[name="gender"]:checked').val();
+                if (gender === undefined) {
+                    e.preventDefault();
+                    $('#gender').after('<div class="text-danger error-message">Please select your Gender.</div>');
+                }
+
+                var nationality = $('#nationality').val();
+                if (nationality === '') {
+                    e.preventDefault();
+                    $('#nationality').after('<div class="text-danger error-message">Please select your Nationality.</div>');
+                }
+            });
+        });
+    </script>
+</head>
+<body>
+
+<form id="myForm" action="Communication_Details.html">
+    <div class="form-group">
+        <label for="firstname">Firstname</label>
+        <input type="text" class="form-control" id="firstname" maxlength="50" required>
+    </div>
+
+    <div class="form-group">
+        <label for="lastname">Lastname</label>
+        <input type="text" class="form-control" id="lastname" maxlength="50" required>
+    </div>
+
+    <div class="form-group">
+        <label>Date of Birth</label>
+        <select class="form-control" id="dobDay" required>
+            <option value="1">1</option>
+            <option value="2">2</option>
+        </select>
+        <select class="form-control" id="dobMonth" required>
+            <option value="Jan">Jan</option>
+            <option value="Feb">Feb</option>
+        </select>
+        <select class="form-control" id="dobYear" required>
+            <option value="2000">2000</option>
+            <option value="2001">2001</option>
+        </select>
+    </div>
+
+    <div class="form-group">
+        <label for="fatherName">Name of Father</label>
+        <input type="text" class="form-control" id="fatherName" maxlength="50">
+    </div>
+
+    <div class="form-group">
+        <label for="motherName">Name of Mother</label>
+        <input type="text" class="form-control" id="motherName" maxlength="50">
+    </div>
+
+    <div class="form-group">
+        <label>Gender</label>
+        <div class="form-check">
+            <input type="radio" class="form-check-input" name="gender" value="Male" required>
+            <label class="form-check-label">Male</label>
+        </div>
+        <div class="form-check">
+            <input type="radio" class="form-check-input" name="gender" value="Female" required>
+            <label class="form-check-label">Female</label>
+        </div>
+        <div class="form-check">
+            <input type="radio" class="form-check-input" name="gender" value="Other" required>
+            <label class="form-check-label">Other</label>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="nationality">Nationality</label>
+        <select class="form-control" id="nationality" required>
+            <option value="">Select Nationality</option>
+            <option value="USA">USA</option>
+            <option value="UK">UK</option>
+            <option value="Australia">Australia</option>
+            <option value="China">China</option>
+            <option value="India">India</option>
+            <option value="Japan">Japan</option>
+            <option value="France">France</option>
+            <option value="Germany">Germany</option>
+            <option value="Brazil">Brazil</option>
+        </select>
+    </div>
+
+    <button type="submit" id="submitBtn" class="btn btn-primary">Next</button>
+</form>
+
+</body>
+</html>

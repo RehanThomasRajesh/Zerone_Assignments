@@ -21,78 +21,76 @@
 <body>
     <div class="container">
         <div class="row">
-            <div class="col-12">
-                <table class="table">
-                    <thead>
-                        <tr style="background-color: purple; color: white;">
-                            <th colspan="6">
-                                <div class="row align-items-center">
-                                    <div class="col-md-8">
-                                        <h2>Manage Employee</h2>
-                                    </div>
-                                    <div class="col-md">
-                                        <button class="btn btn-danger"><i class="fas fa-minus"></i> Delete</button>
-                                    </div>
-                                    <div class="col-md-2">
-                                        <button class="btn btn-success"><i class="fas fa-plus"></i> Add
-                                            Employee</button>
-                                    </div>
-                                </div>
-                            </th>
-                        </tr>
-                        <tr>
-                            <th><input type="checkbox" class="form-check-input">Name</th>
-                            <th>Email</th>
-                            <th>Address</th>
-                            <th>Phone</th>
-                            <th>Actions</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td><input type="checkbox" class="form-check-input">Thomas Hardy</td>
-                            <td>thomashardy@mail.com</td>
-                            <td>89 Chiaroscuro Rd, Portland, USA</td>
-                            <td>(171)555-222</td>
-                            <td><i class="fas fa-edit"></i></td>
-                            <td><i class="fas fa-trash"></i></td>
-                        </tr>
-                        <tr>
-                            <td><input type="checkbox" class="form-check-input">Dominique Perrier</td>
-                            <td>dominiqueperrier@mail.com</td>
-                            <td>Obere Str. 57, Berlin, Germany</td>
-                            <td>(313)555-25735</td>
-                            <td><i class="fas fa-edit"></i></td>
-                            <td><i class="fas fa-trash"></i></td>
-                        </tr>
-                        <tr>
-                            <td><input type="checkbox" class="form-check-input">Maria Anders</td>
-                            <td>mariaander@mail.com</td>
-                            <td>25, rue lauriston, Paris, France</td>
-                            <td>(503)555-9931</td>
-                            <td><i class="fas fa-edit"></i></td>
-                            <td><i class="fas fa-trash"></i></td>
-                        </tr>
-                        <tr>
-                            <td><input type="checkbox" class="form-check-input">fran Wilson</td>
-                            <td>franwilson@mail.com</td>
-                            <td>C/ Araquil, 67, Mandrid, Spain</td>
-                            <td>(204)619-5731</td>
-                            <td><i class="fas fa-edit"></i></td>
-                            <td><i class="fas fa-trash"></i></td>
-                        </tr>
-                        <tr>
-                            <td><input type="checkbox" class="form-check-input">Martin Blank</td>
-                            <td>martinblank@mail.com</td>
-                            <td>Via Monte Bianco 34, Turin, Italy</td>
-                            <td>(480)631-2097</td>
-                            <td><i class="fas fa-edit"></i></td>
-                            <td><i class="fas fa-trash"></i></td>
-                        </tr>
-                    </tbody>
-                </table>
+            <div class="col-12 bg-purple text-white">
+                <div class="row align-items-center bg-primary">
+                    <div class="col-md-8 ">
+                        <h2>Manage Employee</h2>
+                    </div>
+                    <div class="col-md">
+                        <button class="btn btn-danger"><i class="fas fa-minus"></i> Delete</button>
+                    </div>
+                    <div class="col-md-2">
+                        <button class="btn btn-success"><i class="fas fa-plus"></i> Add Employee</button>
+                    </div>
+                </div>
             </div>
         </div>
+
+        <div class="row">
+            <div class="col-md bg-light p-3">
+                <div class="form-check">
+                    <input type="checkbox" class="form-check-input">
+                    <label class="form-check-label">Name</label>
+                </div>
+            </div>
+            <div class="col-md bg-light p-3">
+                <label>Email</label>
+            </div>
+            <div class="col-md bg-light p-3">
+                <label>Address</label>
+            </div>
+            <div class="col-md bg-light p-3">
+                <label>Phone</label>
+            </div>
+            <div class="col-md bg-light p-3">
+                <label>Actions</label>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md bg-light p-3">
+                <div class="form-check">
+                    <input type="checkbox" class="form-check-input">
+                    <label class="form-check-label">Thomas Hardy</label>
+                </div>
+            </div>
+            <div class="col-md bg-light p-3">thomashardy@mail.com</div>
+            <div class="col-md bg-light p-3">89 Chiaroscuro Rd, Portland, USA</div>
+            <div class="col-md bg-light p-3">(171)555-222</div>
+            <div class="col-md bg-light p-3">
+                <i class="fas fa-edit"></i>
+                <i class="fas fa-trash"></i>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md bg-light p-3">
+                <div class="form-check">
+                    <input type="checkbox" class="form-check-input">
+                    <label class="form-check-label">Dominique Perrier</label>
+                </div>
+            </div>
+            <div class="col-md bg-light p-3">dominiqueperrier@mail.com</div>
+            <div class="col-md bg-light p-3">Obere Str. 57, Berlin, Germany</div>
+            <div class="col-md bg-light p-3">(313)555-25735</div>
+            <div class="col-md bg-light p-3">
+                <i class="fas fa-edit"></i>
+                <i class="fas fa-trash"></i>
+            </div>
+        </div>
+
+        <!-- Repeat similar structures for other rows -->
+
     </div>
 </body>
 
