@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Word Count Calculator</title>
+</head>
+
+<body>
+    <h2>Word Count Calculator</h2>
+
+    <form>
+        <label for="textArea">Enter Text:</label><br>
+        <textarea id="textArea" rows="4" cols="50"></textarea><br><br>
+        <button type="button" onclick="calculateWordCount()">Calculate Word Count</button>
+    </form>
+
+    <p id="result">Word count: 0</p>
+
+    <script>
+        function calculateWordCount() {
+            var text = document.getElementById('textArea').value;
+
+            text = text.trim();
+
+            var words = text.split(/\s+/);
+
+            words = words.filter(function (word) {
+                return word.length > 0;
+            });
+
+            document.getElementById('result').innerText = 'Word count: ' + words.length;
+        }
+    </script>
+</body>
+
+</html>
