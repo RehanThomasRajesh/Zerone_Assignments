@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <title>Quality Assessment</title>
+    <script>
+        function validateQualityAssessment() {
+            var qualityOfExperience = document.getElementById('qualityOfExperience').value;
+            var qualityOfEducation = document.getElementById('qualityOfEducation').value;
+            var technicalTestResult = document.getElementById('technicalTestResult').value;
+            var interviewer = document.getElementById('interviewer').value;
+            var interviewerComments = document.getElementById('interviewerComments').value;
+            var remarks = document.getElementById('remarks').value;
+
+            if (isNaN(qualityOfExperience) || qualityOfExperience < 1 || qualityOfExperience > 5) {
+                alert('Quality of Experience should be a number between 1 and 5.');
+                return false;
+            }
+
+            if (isNaN(qualityOfEducation) || qualityOfEducation < 1 || qualityOfEducation > 5) {
+                alert('Quality of Education should be a number between 1 and 5.');
+                return false;
+            }
+
+            if (technicalTestResult.length > 30) {
+                alert('Technical Test Result should not exceed 30 characters.');
+                return false;
+            }
+
+            if (interviewer.length > 30) {
+                alert('Interviewer name should not exceed 30 characters.');
+                return false;
+            }
+
+            if (interviewerComments.length > 150) {
+                alert('Interviewer Comments should not exceed 150 characters.');
+                return false;
+            }
+
+            if (remarks.length > 150) {
+                alert('Remarks should not exceed 150 characters.');
+                return false;
+            }
+
+            return true;
+        }
+    </script>
+</head>
+<body>
+    <h2>Quality Assessment</h2>
+    <div class="container">
+        <form action="some_action.html" method="post" onsubmit="return validateQualityAssessment()">
+            <div class="row">
+                <div class="col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6">
+                    <div class="form-group">
+                        <label for="qualityOfExperience">Quality of Experience:</label>
+                        <input type="number" class="form-control" id="qualityOfExperience" min="1" max="5" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="qualityOfEducation">Quality of Education:</label>
+                        <input type="number" class="form-control" id="qualityOfEducation" min="1" max="5" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="technicalTestResult">Technical Test Result:</label>
+                        <input type="text" class="form-control" id="technicalTestResult" maxlength="30">
+                    </div>
+                </div>
+                <div class="col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6">
+                    <div class="form-group">
+                        <label for="interviewer">Interviewer:</label>
+                        <input type="text" class="form-control" id="interviewer" maxlength="30">
+                    </div>
+                    <div class="form-group">
+                        <label for="interviewerComments">Interviewer Comments:</label>
+                        <textarea class="form-control" id="interviewerComments" rows="5" maxlength="150"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="remarks">Remarks:</label>
+                        <textarea class="form-control" id="remarks" rows="5" maxlength="150"></textarea>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <title>Identification Details</title>
+    <script>
+        function validateIdentificationDetails() {
+            var aadharNumber = document.getElementById('aadharNumber').value;
+            var panNumber = document.getElementById('panNumber').value;
+            var passportNumber = document.getElementById('passportNumber').value;
+            var passportExpiryMonth = document.getElementById('passportExpiryMonth').value;
+            var passportExpiryYear = document.getElementById('passportExpiryYear').value;
+            var pfAccountNumber = document.getElementById('pfAccountNumber').value;
+    
+            if (aadharNumber.trim() === '') {
+                alert('Aadhar Number is mandatory.');
+                return false;
+            }
+            if (aadharNumber.length > 16) {
+                alert('Aadhar Number should not exceed 16 characters.');
+                return false;
+            }
+    
+            if (panNumber.length > 10) {
+                alert('PAN Number should not exceed 10 characters.');
+                return false;
+            }
+    
+            if (passportNumber.length > 8) {
+                alert('Passport Number should not exceed 8 characters.');
+                return false;
+            }
+    
+            if (passportExpiryMonth === '' || passportExpiryYear === '') {
+                alert('Please select both month and year for Passport Expiry.');
+                return false;
+            }
+    
+            if (pfAccountNumber.length > 20) {
+                alert('PF Account Number should not exceed 20 characters.');
+                return false;
+            }
+    
+            console.log('Form submission prevented by validation function.');
+    
+            return true;
+        }
+    </script>
+</head>
+<body>
+    <h2>Identification Details</h2>
+    <div class="container">
+        <form action="comments.html" method="post" onsubmit="return validateIdentificationDetails()">
+            <div class="row">
+                <div class="col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6">
+                    <div class="form-group">
+                        <label for="aadharNumber">Aadhar Number:</label>
+                        <input type="text" class="form-control" id="aadharNumber" maxlength="16" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="panNumber">PAN Number:</label>
+                        <input type="text" class="form-control" id="panNumber" maxlength="10">
+                    </div>
+                    <div class="form-group">
+                        <label for="passportNumber">Passport Number:</label>
+                        <input type="text" class="form-control" id="passportNumber" maxlength="8">
+                    </div>
+                </div>
+                <div class="col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6">
+                    <div class="form-group">
+                        <label for="passportExpiry">Passport Expiry:</label>
+                        <select class="form-control" id="passportExpiryMonth" required>
+                            <!-- Options for months -->
+                        </select>
+                        <select class="form-control" id="passportExpiryYear" required>
+                            <!-- Options for years -->
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="pfAccountNumber">PF Account Number:</label>
+                        <input type="text" class="form-control" id="pfAccountNumber" maxlength="20">
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+                    <button type="submit" class="btn btn-primary">Next</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</body>
+
+</html>
