@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Drag and Match</title>
+    <style>
+        .container {
+            display: flex;
+        }
+
+        .left,
+        .right {
+            width: 50%;
+            padding: 20px;
+        }
+
+        .element {
+            margin: 5px;
+            padding: 10px;
+            border: 1px solid #0e0e0e;
+            cursor: pointer;
+        }
+
+        .correct {
+            background-color: rgb(19, 234, 19);
+            position: relative;
+            top: 0;
+            left: 0;
+        }
+
+        .incorrect {
+            background-color: red;
+        }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="left">
+            <div class="element" data-country="USA">Washington, D.C.</div>
+            <div class="element" data-country="Canada">Ottawa</div> 
+            <div class="element" data-country="India">Delhi</div> 
+            <!-- Add more capital cities... -->
+        </div>
+        <div class="right">
+            <div class="element" data-country="USA">United States</div>
+            <div class="element" data-country="Canada">Canada</div>
+            <div class="element" data-country="India">India</div>
+            <!-- Add more countries... -->
+        </div>
+    </div>
+
+    <script>
+        $(document).ready(function () {
+            $(".element").draggable({
+                revert: "invalid",
+                cursor: "move"
+            });
+
+            $(".element").droppable({
+                accept: ".element",
+                drop: function (event, ui) {
+                    var draggedElement = ui.helper;
+                    var country = $(this).data("country");
+                    var droppedCountry = draggedElement.data("country");
+
+                    if (country === droppedCountry) {
+                        draggedElement.addClass("correct");
+                        $(this).addClass("correct");
+                        $(this).droppable("disable");
+                    } else {
+                        draggedElement.addClass("incorrect");
+                        $(this).addClass("incorrect");
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>
