@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Details Form</title>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+</head>
+
+<body>
+    <h1>Employee Details Form</h1>
+    <form>
+        <label for="firstName">First Name:</label>
+        <input type="text" id="firstName" name="firstName">
+        <span class="error"></span><br>
+
+        <label for="lastName">Last Name:</label>
+        <input type="text" id="lastName" name="lastName">
+        <span class="error"></span><br>
+
+        <label for="gender">Gender:</label>
+        <input type="radio" id="male" name="gender" value="male"> Male
+        <input type="radio" id="female" name="gender" value="female"> Female
+        <span class="error"></span><br>
+
+        <label for="personalEmail">Personal Email:</label>
+        <input type="email" id="personalEmail" name="personalEmail">
+        <span class="error"></span><br>
+
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password">
+        <span class="error"></span><br>
+
+        <label for="confirmPassword">Confirm Password:</label>
+        <input type="password" id="confirmPassword" name="confirmPassword">
+        <span class="error"></span><br>
+
+        <label for="postalAddress">Postal Address:</label>
+        <input type="text" id="postalAddress" name="postalAddress">
+        <span class="error"></span><br>
+
+        <label for="country">Country:</label>
+        <select id="country" name="country">
+            <option value="">Select</option>
+            <option value="US">United States</option>
+            <option value="India">India</option>
+            <!-- Add other countries... -->
+        </select>
+        <span class="error"></span><br>
+
+        <label for="zipCode">Zip Code:</label>
+        <input type="text" id="zipCode" name="zipCode">
+        <span class="error"></span><br>
+
+        <label for="transportation">Need Transportation?</label>
+        <input type="checkbox" id="transportation" name="transportation"><br>
+
+        <input type="button" value="Submit" id="submitBtn">
+        <input type="button" value="Failure" id="failureBtn">
+    </form>
+
+    <div id="successMessage" style="display: none; color: green;">Form submitted successfully!</div>
+    <div id="failureMessage" style="display: none; color: red;">Form submission failed!</div>
+
+    <script>
+        $(document).ready(function () {
+            $("#submitBtn").click(function () {
+                $(".error").text("");
+                var valid = validateForm();
+
+                if (valid) {
+                    $("#successMessage").show();
+                    setTimeout(function () {
+                        $("#successMessage").hide();
+                    }, 3000);
+                }
+            });
+
+            $("#failureBtn").click(function () {
+                $("#failureMessage").show();
+            });
+
+            function validateForm() {
+                var valid = true;
+
+                $("input[type='text'], input[type='password'], input[type='email'], select").each(function () {
+                    if ($(this).val() === "") {
+                        valid = false;
+                        $(this).next(".error").text("This field is required.");
+                    }
+                });
+
+                var gender = $("input:radio[name='gender']:checked").val();
+                if (!gender) {
+                    valid = false;
+                    $("input:radio[name='gender']").next(".error").text("Please select a gender.");
+                }
+
+                var email = $("#personalEmail").val();
+                if (email !== "" && !isEmail(email)) {
+                    valid = false;
+                    $("#personalEmail").next(".error").text("Enter a valid email address.");
+                }
+
+                var password = $("#password").val();
+                var confirmPassword = $("#confirmPassword").val();
+                if (password !== confirmPassword) {
+                    valid = false;
+                    $("#confirmPassword").next(".error").text("Passwords do not match.");
+                }
+
+                var postalAddress = $("#postalAddress").val();
+                if (postalAddress.length > 250) {
+                    valid = false;
+                    $("#postalAddress").next(".error").text("Postal address should be less than 250 characters.");
+                }
+
+                var country = $("#country").val();
+                var zipCode = $("#zipCode").val();
+                if ((country === "India" && zipCode.length !== 6) || (country === "US" && zipCode.length !== 5)) {
+                    valid = false;
+                    $("#zipCode").next(".error").text("Invalid zip code.");
+                }
+
+                return valid;
+            }
+
+            function isEmail(email) {
+                var regex = /^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+                return regex.test(email);
+            }
+        });
+    </script>
+</body>
+
+</html>
