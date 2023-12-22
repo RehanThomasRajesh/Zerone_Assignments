@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Image Slideshow</title>
+  <style>
+    body {
+      margin: 0;
+      overflow: hidden;
+    }
+    #slideshow-container {
+      display: flex;
+      transition: transform 1s ease-in-out;
+    }
+    .slide {
+      width: 100vw;
+      flex-shrink: 0;
+    }
+  </style>
+</head>
+<body>
+
+  <div id="slideshow-container">
+    <img class="slide" src="image1.jpg" alt="Slide 1">
+    <img class="slide" src="image2.jpg" alt="Slide 2">
+    <img class="slide" src="image3.jpg" alt="Slide 3">
+    <img class="slide" src="image4.jpg" alt="Slide 3">
+    <img class="slide" src="image5.jpg" alt="Slide 3">
+  </div>
+
+  <script>
+    var currentIndex = 0;
+    var slides = document.querySelectorAll('.slide');
+    var totalSlides = slides.length;
+
+    function nextSlide() {
+      currentIndex = (currentIndex + 1) % totalSlides;
+      var translateValue = -currentIndex * 100 + 'vw';
+      document.getElementById('slideshow-container').style.transform = 'translateX(' + translateValue + ')';
+    }
+
+    nextSlide();
+
+    setInterval(nextSlide, 5000);
+  </script>
+
+</body>
+</html>
