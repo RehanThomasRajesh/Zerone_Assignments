@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dynamic Table with Delete Button and Checkboxes</title>
+  <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      padding: 20px;
+    }
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      margin-bottom: 20px;
+    }
+    table, th, td {
+      border: 1px solid #ddd;
+    }
+    th, td {
+      padding: 12px;
+      text-align: left;
+    }
+    th {
+      background-color: #f2f2f2;
+    }
+    button {
+      margin-bottom: 20px;
+    }
+    .header-checkbox {
+      margin-left: 5px;
+    }
+  </style>
+  <script>
+    $(document).ready(function() {
+      var table = $('#data-table');
+
+      // Header checkbox
+      var headerCheckbox = $('<input type="checkbox" class="header-checkbox">');
+      headerCheckbox.change(function() {
+        // Check or uncheck all checkboxes based on the header checkbox state
+        $(':checkbox', table).prop('checked', $(this).prop('checked'));
+      });
+
+      // Add the header checkbox to the first th element
+      $('th:first', table).prepend(headerCheckbox);
+
+      $('tr:gt(0)', table).each(function() {
+        // Checkbox for each row
+        var rowCheckbox = $('<input type="checkbox">');
+        rowCheckbox.change(function() {
+          // Check or uncheck the header checkbox based on row checkboxes
+          headerCheckbox.prop('checked', $(':checkbox', table).length === $(':checkbox:checked', table).length);
+
+          // Add gray background to header checkbox if some row checkboxes are unchecked
+          headerCheckbox.prop('indeterminate', $(':checkbox:checked', table).length > 0 && $(':checkbox:not(:checked)', table).length > 0);
+        });
+
+        // Add the row checkbox to the first td element
+        $(this).find('td:first').prepend(rowCheckbox);
+
+        // Delete button for each row
+        var deleteButton = $('<button>Delete</button>');
+        deleteButton.click(function() {
+          // Remove the corresponding row when the delete button is clicked
+          $(this).closest('tr').remove();
+
+          // Update the state of the header checkbox after row deletion
+          headerCheckbox.prop('checked', $(':checkbox', table).length === $(':checkbox:checked', table).length);
+          headerCheckbox.prop('indeterminate', $(':checkbox:checked', table).length > 0 && $(':checkbox:not(:checked)', table).length > 0);
+        });
+
+        // Add the delete button to the last td element
+        $(this).find('td:last').append(deleteButton);
+      });
+    });
+  </script>
+</head>
+<body>
+
+  <table id="data-table">
+    <thead>
+      <tr>
+        <th></th>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Mobile Number</th>
+        <th>Country</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td></td>
+        <td>Akhil A.S</td>
+        <td>akhil@gmail.com</td>
+        <td>9712345123</td>
+        <td>India</td>
+        <td></td> 
+      </tr>
+      <tr>
+        <td></td>
+        <td>Amildev S</td>
+        <td>amil@gmail.com</td>
+        <td>8112649823</td>
+        <td>India</td>
+        <td></td> 
+      </tr>
+      <tr>
+        <td></td>
+        <td>Rakesh Singh</td>
+        <td>rakesh@yahoo.com</td>
+        <td>5623906512</td>
+        <td>UAE</td>
+        <td></td>
+        
+      </tr>
+    </tbody>
+  </table>
+
+</body>
+</html>
