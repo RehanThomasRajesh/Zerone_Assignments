@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,33 +12,41 @@
       font-family: Arial, sans-serif;
       padding: 20px;
     }
+
     table {
       border-collapse: collapse;
       width: 100%;
       margin-bottom: 20px;
     }
-    table, th, td {
+
+    table,
+    th,
+    td {
       border: 1px solid #ddd;
     }
-    th, td {
+
+    th,
+    td {
       padding: 12px;
       text-align: left;
     }
+
     th {
       background-color: #f2f2f2;
     }
+
     button {
       margin-bottom: 20px;
     }
   </style>
   <script>
-    $(document).ready(function() {
+    $(document).ready(function () {
       var table = $('#data-table');
 
-      $('tr:gt(0)', table).each(function() {
+      $('tr:gt(0)', table).each(function () {
         var deleteButton = $('<button>Delete</button>');
 
-        deleteButton.click(function() {
+        deleteButton.click(function () {
           $(this).closest('tr').remove();
         });
 
@@ -46,6 +55,7 @@
     });
   </script>
 </head>
+
 <body>
 
   <table id="data-table">
@@ -82,4 +92,5 @@
   </table>
 
 </body>
+
 </html>

@@ -1,15 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Blinking Text</title>
   <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
   <script>
-    $(document).ready(function() {
+    $(document).ready(function () {
       // Function to make text blink
       function blinkText() {
-        $("#blinkingText").fadeOut(500, function() {
+        $("#blinkingText").fadeOut(500, function () {
           $(this).fadeIn(500);
         });
       }
@@ -26,10 +27,12 @@
     }
   </style>
 </head>
+
 <body>
 
   <h1 id="blinkingText">Blinking Text</h1>
   <p>This text will blink using jQuery.</p>
 
 </body>
+
 </html>

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,17 +12,21 @@
       font-family: Arial, sans-serif;
       padding: 20px;
     }
+
     label {
       display: block;
       margin-bottom: 5px;
     }
-    select, input, button {
+
+    select,
+    input,
+    button {
       margin-bottom: 10px;
     }
   </style>
   <script>
-    $(document).ready(function() {
-      $('#addOptionBtn').click(function() {
+    $(document).ready(function () {
+      $('#addOptionBtn').click(function () {
         var newText = $('#newOptionText').val();
 
         $('#selectOptions').append('<option>' + newText + '</option>');
@@ -31,6 +36,7 @@
     });
   </script>
 </head>
+
 <body>
 
   <form>
@@ -48,4 +54,5 @@
   </form>
 
 </body>
+
 </html>
