@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Character Limit</title>
+  <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      padding: 20px;
+    }
+    textarea {
+      width: 100%;
+      height: 100px;
+    }
+    #charCount {
+      text-align: right;
+      margin-bottom: 10px;
+    }
+  </style>
+  <script>
+    $(document).ready(function() {
+      var maxLength = 500;
+      var textarea = $('#limitedTextarea');
+      var charCountLabel = $('#charCount');
+
+      updateCharCount();
+
+      textarea.on('input', function() {
+        updateCharCount();
+      });
+
+      function updateCharCount() {
+        var currentLength = textarea.val().length;
+        var remaining = maxLength - currentLength;
+        charCountLabel.text(remaining + ' characters remaining');
+      }
+    });
+  </script>
+</head>
+<body>
+
+  <div id="charCount">500 characters remaining</div>
+  <textarea id="limitedTextarea" maxlength="500"></textarea>
+
+</body>
+</html>
