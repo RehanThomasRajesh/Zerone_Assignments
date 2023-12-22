@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Disable Right-Click</title>
+  <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+  <script>
+    $(document).ready(function() {
+      $(document).on("contextmenu", function(e) {
+        e.preventDefault();
+      });
+    });
+  </script>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding: 50px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Right-Click is Disabled</h1>
+  <p>You cannot right-click on this page.</p>
+
+</body>
+</html>
