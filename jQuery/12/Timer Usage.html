@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Live Clock</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      background-color: #f0f0f0;
+    }
+    label {
+      font-size: 2em;
+      margin: 0 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <label id="hourLabel"></label>
+  <label id="minuteLabel"></label>
+  <label id="secondLabel"></label>
+
+  <script>
+    function updateClock() {
+      var now = new Date();
+      var hour = now.getHours().toString().padStart(2, '0');
+      var minute = now.getMinutes().toString().padStart(2, '0');
+      var second = now.getSeconds().toString().padStart(2, '0');
+
+      document.getElementById('hourLabel').textContent = hour;
+      document.getElementById('minuteLabel').textContent = minute;
+      document.getElementById('secondLabel').textContent = second;
+    }
+
+    updateClock();
+
+    setInterval(updateClock, 1000);
+  </script>
+
+</body>
+</html>
