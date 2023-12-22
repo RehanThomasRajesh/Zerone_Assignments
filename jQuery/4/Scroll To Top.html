@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <title>Scroll to Top</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        .content {
+            padding: 20px;
+            line-height: 1.6;
+        }
+
+        #scrollToTopBtn {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            cursor: pointer;
+            display: none;
+            width: 50px;
+            height: 50px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="content">
+        <img src="1.jpg" alt="">
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. ...</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat id eveniet, molestiae repellat earum nobis
+            officiis at odio, quaerat harum ullam quidem placeat deserunt veritatis magnam dolor? Perferendis, pariatur.
+            Accusamus.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. ...</p>
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aliquid quo, tempora atque nihil, impedit placeat
+            laboriosam sit fuga eaque quae itaque velit maxime deleniti voluptates. Tempore qui aperiam fugit cum.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. ...</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas iste nostrum excepturi, delectus ratione
+            corporis quasi doloremque consequatur? Illo, ut minima? Quisquam, sequi deserunt. Nesciunt atque quas magni
+            iste ab.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. ...</p>
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eum totam voluptatibus quas harum dicta similique?
+            Tempore et quam numquam. Autem facilis sit placeat harum molestiae voluptas laudantium? Amet, earum
+            eligendi!</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. ...</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur odio ea qui reiciendis quis id fugiat
+            explicabo pariatur blanditiis hic nam et fuga temporibus at ipsam, distinctio maxime? Similique, a?</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. ...</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque molestias fugiat, accusantium ducimus rerum
+            porro aliquid sed provident quam dolore amet quas sint hic magnam eveniet eligendi, sit exercitationem nam!
+        </p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. ...</p>
+
+        <img src="up.png" alt="Scroll to Top" id="scrollToTopBtn">
+    </div>
+
+
+    <script>
+        $(document).ready(function () {
+            $(window).scroll(function () {
+                if ($(this).scrollTop() > 100) {
+                    $('#scrollToTopBtn').fadeIn();
+                } else {
+                    $('#scrollToTopBtn').fadeOut();
+                }
+            });
+
+            $('#scrollToTopBtn').click(function () {
+                $('html, body').animate({ scrollTop: 0 }, 'slow');
+                return false;
+            });
+        });
+    </script>
+
+</body>
+
+</html>
