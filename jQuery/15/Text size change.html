@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>India's Pledge</title>
+  <style>
+    body {
+      margin: 20px;
+      font-family: Arial, sans-serif;
+    }
+    #pledge {
+      font-size: 10px;
+      color: black;
+    }
+  </style>
+</head>
+<body>
+
+  <div id="pledge">
+    <!-- India's Pledge -->
+    We, the citizens of India, having solemnly resolved to constitute India into a sovereign socialist secular democratic republic and to secure to all its citizens...
+  </div>
+<br>
+  <div>
+    <!-- Font Size Buttons -->
+    <button onclick="changeFontSize('small')">Small</button>
+    <button onclick="changeFontSize('normal')">Normal</button>
+    <button onclick="changeFontSize('large')">Large</button>
+  </div>
+<br>
+  <div>
+    <!-- Text Color Buttons -->
+    <button onclick="changeTextColor('blue')">Blue</button>
+    <button onclick="changeTextColor('black')">Black</button>
+    <button onclick="changeTextColor('orange')">Orange</button>
+  </div>
+
+  <script>
+    function changeFontSize(size) {
+      var pledgeText = document.getElementById('pledge');
+
+      switch (size) {
+        case 'small':
+          pledgeText.style.fontSize = '7px';
+          break;
+        case 'normal':
+          pledgeText.style.fontSize = '10px';
+          break;
+        case 'large':
+          pledgeText.style.fontSize = '16px';
+          break;
+      }
+    }
+
+    function changeTextColor(color) {
+      var pledgeText = document.getElementById('pledge');
+      pledgeText.style.color = color;
+    }
+  </script>
+
+</body>
+</html>
