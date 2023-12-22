@@ -1,114 +1,126 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Dynamic Table with Delete Button and Checkboxes</title>
-  <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      padding: 20px;
-    }
-    table {
-      border-collapse: collapse;
-      width: 100%;
-      margin-bottom: 20px;
-    }
-    table, th, td {
-      border: 1px solid #ddd;
-    }
-    th, td {
-      padding: 12px;
-      text-align: left;
-    }
-    th {
-      background-color: #f2f2f2;
-    }
-    button {
-      margin-bottom: 20px;
-    }
-    .header-checkbox {
-      margin-left: 5px;
-    }
-  </style>
-  <script>
-    $(document).ready(function() {
-      var table = $('#data-table');
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Table with Delete Button and Checkboxes</title>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
 
-      // Header checkbox
-      var headerCheckbox = $('<input type="checkbox" class="header-checkbox">');
-      headerCheckbox.change(function() {
-        $(':checkbox', table).prop('checked', $(this).prop('checked'));
-      });
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin-bottom: 20px;
+        }
 
-      $('th:first', table).prepend(headerCheckbox);
+        table,
+        th,
+        td {
+            border: 1px solid #ddd;
+        }
 
-      $('tr:gt(0)', table).each(function() {
-        var rowCheckbox = $('<input type="checkbox">');
-        rowCheckbox.change(function() {
-          headerCheckbox.prop('checked', $(':checkbox', table).length === $(':checkbox:checked', table).length);
+        th,
+        td {
+            padding: 12px;
+            text-align: left;
+        }
 
-          headerCheckbox.prop('indeterminate', $(':checkbox:checked', table).length > 0 && $(':checkbox:not(:checked)', table).length > 0);
+        th {
+            background-color: #f2f2f2;
+        }
+
+        button {
+            margin-bottom: 20px;
+        }
+
+        .header-checkbox {
+            margin-left: 5px;
+        }
+    </style>
+    <script>
+        $(document).ready(function () {
+            var table = $('#data-table');
+
+            // Header checkbox
+            var headerCheckbox = $('<input type="checkbox" class="header-checkbox">');
+            headerCheckbox.change(function () {
+                $(':checkbox', table).prop('checked', $(this).prop('checked'));
+            });
+
+            $('th:first', table).prepend(headerCheckbox);
+
+            $('tr:gt(0)', table).each(function () {
+                var rowCheckbox = $('<input type="checkbox">');
+                rowCheckbox.change(function () {
+                    headerCheckbox.prop('checked', $(':checkbox', table).length === $(':checkbox:checked', table).length);
+
+                    headerCheckbox.prop('indeterminate', $(':checkbox:checked', table).length > 0 && $(':checkbox:not(:checked)', table).length > 0);
+                });
+
+                $(this).find('td:first').prepend(rowCheckbox);
+
+                var deleteButton = $('<button>Delete</button>');
+                deleteButton.click(function () {
+                    $(this).closest('tr').remove();
+
+                    headerCheckbox.prop('checked', $(':checkbox', table).length === $(':checkbox:checked', table).length);
+                    headerCheckbox.prop('indeterminate', $(':checkbox:checked', table).length > 0 && $(':checkbox:not(:checked)', table).length > 0);
+                });
+
+                $(this).find('td:last').append(deleteButton);
+            });
         });
-
-        $(this).find('td:first').prepend(rowCheckbox);
-
-        var deleteButton = $('<button>Delete</button>');
-        deleteButton.click(function() {
-          $(this).closest('tr').remove();
-
-          headerCheckbox.prop('checked', $(':checkbox', table).length === $(':checkbox:checked', table).length);
-          headerCheckbox.prop('indeterminate', $(':checkbox:checked', table).length > 0 && $(':checkbox:not(:checked)', table).length > 0);
-        });
-
-        $(this).find('td:last').append(deleteButton);
-      });
-    });
-  </script>
+    </script>
 </head>
+
 <body>
 
-  <table id="data-table">
-    <thead>
-      <tr>
-        <th></th>
-        <th>Name</th>
-        <th>Email</th>
-        <th>Mobile Number</th>
-        <th>Country</th>
-        <th>Action</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td></td>
-        <td>Akhil A.S</td>
-        <td>akhil@gmail.com</td>
-        <td>9712345123</td>
-        <td>India</td>
-        <td></td> 
-      </tr>
-      <tr>
-        <td></td>
-        <td>Amildev S</td>
-        <td>amil@gmail.com</td>
-        <td>8112649823</td>
-        <td>India</td>
-        <td></td> 
-      </tr>
-      <tr>
-        <td></td>
-        <td>Rakesh Singh</td>
-        <td>rakesh@yahoo.com</td>
-        <td>5623906512</td>
-        <td>UAE</td>
-        <td></td>
-        
-      </tr>
-    </tbody>
-  </table>
+    <table id="data-table">
+        <thead>
+            <tr>
+                <th></th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Mobile Number</th>
+                <th>Country</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td></td>
+                <td>Akhil A.S</td>
+                <td>akhil@gmail.com</td>
+                <td>9712345123</td>
+                <td>India</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>Amildev S</td>
+                <td>amil@gmail.com</td>
+                <td>8112649823</td>
+                <td>India</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>Rakesh Singh</td>
+                <td>rakesh@yahoo.com</td>
+                <td>5623906512</td>
+                <td>UAE</td>
+                <td></td>
+
+            </tr>
+        </tbody>
+    </table>
 
 </body>
+
 </html>
