@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Add Option to Select</title>
+  <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      padding: 20px;
+    }
+    label {
+      display: block;
+      margin-bottom: 5px;
+    }
+    select, input, button {
+      margin-bottom: 10px;
+    }
+  </style>
+  <script>
+    $(document).ready(function() {
+      $('#addOptionBtn').click(function() {
+        var newText = $('#newOptionText').val();
+
+        $('#selectOptions').append('<option>' + newText + '</option>');
+
+        $('#newOptionText').val('');
+      });
+    });
+  </script>
+</head>
+<body>
+
+  <form>
+    <label for="selectOptions">Select Options:</label>
+    <select id="selectOptions">
+      <p>Your Favorite Games</p>
+      <option>FIFA</option>
+      <option>PES</option>
+    </select>
+
+    <label for="newOptionText">New Option:</label>
+    <input type="text" id="newOptionText">
+
+    <button type="button" id="addOptionBtn">Add Option</button>
+  </form>
+
+</body>
+</html>
