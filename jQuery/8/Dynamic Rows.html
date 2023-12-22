@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dynamic Table</title>
+  <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      padding: 20px;
+    }
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      margin-bottom: 20px;
+    }
+    table, th, td {
+      border: 1px solid #ddd;
+    }
+    th, td {
+      padding: 12px;
+      text-align: left;
+    }
+    th {
+      background-color: #f2f2f2;
+    }
+    button {
+      margin-bottom: 20px;
+    }
+  </style>
+  <script>
+    $(document).ready(function() {
+      var table = $('#data-table');
+      var addButton = $('#add-row-btn');
+
+      addButton.click(function() {
+        var newRow = '<tr>' +
+          '<td>Rehan Thomas Rajesh</td>' +
+          '<td>rehan@gmail.com</td>' +
+          '<td>9633428878</td>' +
+          '<td>India</td>' +
+          '</tr>';
+
+        table.append(newRow);
+      });
+    });
+  </script>
+</head>
+<body>
+
+  <button id="add-row-btn">Add New Row</button>
+  <table id="data-table">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Mobile Number</th>
+        <th>Country</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Akhil A.S</td>
+        <td>akhil@gmail.com</td>
+        <td>9712345123</td>
+        <td>India</td>
+      </tr>
+      <tr>
+        <td>Amildev S</td>
+        <td>amil@gmail.com</td>
+        <td>8112649823</td>
+        <td>India</td>
+      </tr>
+      <tr>
+        <td>Rakesh Singh</td>
+        <td>rakesh@yahoo.com</td>
+        <td>5623906512</td>
+        <td>UAE</td>
+      </tr>
+    </tbody>
+  </table>
+
+</body>
+</html>
