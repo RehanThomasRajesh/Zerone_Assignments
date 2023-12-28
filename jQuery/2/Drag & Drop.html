@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Drag and Match</title>
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
     <style>
         .container {
             display: flex;
@@ -21,17 +22,18 @@
             padding: 10px;
             border: 1px solid #0e0e0e;
             cursor: pointer;
+            background-color: #fff;
         }
 
         .correct {
-            background-color: rgb(19, 234, 19);
+            background-color: rgb(19, 234, 19) !important;
             position: relative;
             top: 0;
             left: 0;
         }
 
         .incorrect {
-            background-color: red;
+            background-color: red !important;
         }
     </style>
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
@@ -76,6 +78,15 @@
                     }
                 }
             });
+
+            $(".left, .right").sortable({
+                connectWith: ".container",
+                tolerance: "pointer",
+                receive: function (event, ui) {
+                    $(".element").removeClass("correct incorrect");
+                    $(".element").droppable("enable");
+                }
+            }).disableSelection();
         });
     </script>
 </body>

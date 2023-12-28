@@ -61,31 +61,26 @@
                         <input type="text" id="lastName" name="lastName" class="form-control" maxlength="50" required>
                     </div>
 
-                    <div class="form-group">
-                        <label>Date of Birth:</label>
-                        <select id="dobDay" name="dobDay" class="form-control" required>
-                            <option value="">Day</option>
-                            <!-- Add options for day here, for example: -->
-                            <option value="1">1</option>
-                            <option value="2">2</option>
-                            <!-- Add more options as needed -->
-                        </select>
-
-                        <select id="dobMonth" name="dobMonth" class="form-control" required>
-                            <option value="">Month</option>
-                            <!-- Add options for month here, for example: -->
-                            <option value="1">January</option>
-                            <option value="2">February</option>
-                            <!-- Add more options as needed -->
-                        </select>
-
-                        <select id="dobYear" name="dobYear" class="form-control" required>
-                            <option value="">Year</option>
-                            <!-- Add options for year here, for example: -->
-                            <option value="2022">2022</option>
-                            <option value="2021">2021</option>
-                            <!-- Add more options as needed -->
-                        </select>
+                    <div class="form-group row">
+                        <label class="col-sm-3 col-form-label">Date of Birth</label>
+                        <div class="col-sm-3">
+                            <select class="form-control" id="dobDay" required>
+                                <option value="">Day</option>
+                                <option value="1">1</option>
+                            </select>
+                        </div>
+                        <div class="col-sm-3">
+                            <select class="form-control" id="dobMonth" required>
+                                <option value="">Month</option>
+                                <option value="Jan">Jan</option>
+                            </select>
+                        </div>
+                        <div class="col-sm-3">
+                            <select class="form-control" id="dobYear" required>
+                                <option value="">Year</option>
+                                <option value="2000">2000</option>
+                            </select>
+                        </div>
                     </div>
 
                     <div class="form-group">
