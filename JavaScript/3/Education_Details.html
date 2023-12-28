@@ -18,36 +18,54 @@
             var yearOfPassing = document.getElementById('yearOfPassing').value;
             var grade = document.getElementById('grade').value;
 
+            if (course.trim() === '') {
+                alert('Course is mandatory.');
+                return false;
+            }
+
             if (course.length > 20) {
-                alert('Course should be less than or equal to 20 characters');
+                alert('Course should be less than or equal to 20 characters.');
+                return false;
+            }
+
+            if (specialization.trim() === '') {
+                alert('Specialization is mandatory.');
                 return false;
             }
 
             if (specialization.length > 20) {
-                alert('Specialization should be less than or equal to 20 characters');
+                alert('Specialization should be less than or equal to 20 characters.');
                 return false;
             }
 
             if (yearOfPassing === '') {
-                alert('Please select the Year of Passing');
+                alert('Please select the Year of Passing.');
+                return false;
+            }
+
+            if (grade.trim() === '') {
+                alert('Grade/Mark is mandatory.');
                 return false;
             }
 
             if (grade.length > 20) {
-                alert('Grade/Mark should be less than or equal to 20 characters');
+                alert('Grade/Mark should be less than or equal to 20 characters.');
                 return false;
             }
 
             return true;
+        }
+        function goToCommunicationDetails() {
+            window.location.href = 'Communication_Details.html';
         }
     </script>
 </head>
 
 <body>
 
-    <div class="container mt-5 g-3">
+    <div class="container mt-5">
         <div class="card">
-            <div class="card-header">
+            <div class="card-header bg-primary text-white">
                 <h2>Education Details</h2>
             </div>
             <div class="card-body">
@@ -143,6 +161,9 @@
                     </div>
 
                     <div class="form-group row">
+                        <div class="col-6 col-sm-6 col-md-6 col-lg-6 col-xl-6">
+                            <button type="button" class="btn btn-secondary" onclick="goToCommunicationDetails()">Previous</button>
+                        </div>
                         <div class="col-6 col-sm-6 col-md-6 col-lg-6 col-xl-6">
                             <button type="submit" class="btn btn-primary">Next</button>
                         </div>
