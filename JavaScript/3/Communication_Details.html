@@ -8,19 +8,6 @@
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    <style>
-        .card {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-        }
-
-        #communicationForm {
-            width: 100%;
-            max-width: 400px;
-        }
-    </style>
     <script>
         $(document).ready(function () {
             $('#submitBtn').click(function (e) {
@@ -45,11 +32,10 @@
     <title>Communication Details</title>
 </head>
 
-<body>
+<body class="bg-light">
     <div class="container mt-5">
         <div class="card">
-            <div class="card-header">Communication Details
-            </div>
+            <div class="card-header bg-primary text-white">Communication Details</div>
             <div class="card-body">
                 <form id="communicationForm" action="Education_Details.html">
                     <div class="form-group">
@@ -69,7 +55,7 @@
 
                     <div class="form-group">
                         <label for="postalAddress">Postal Address</label>
-                        <textarea class="form-control" id="postalAddress" rows="5" cols="50" required></textarea>
+                        <textarea class="form-control" id="postalAddress" rows="5" required></textarea>
                     </div>
 
                     <button type="submit" id="submitBtn" class="btn btn-primary">Submit</button>
