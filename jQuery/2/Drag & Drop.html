@@ -1,94 +1,78 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8" />
     <title>Drag and Match</title>
-    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css" rel="stylesheet" />
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <style>
-        .container {
-            display: flex;
+        .town {
+            width: 200px;
+            height: 40px;
+            border: solid;
+            border-width: 5px;
+            border-color: red;
         }
 
-        .left,
-        .right {
-            width: 50%;
-            padding: 20px;
+        .country {
+            width: 400px;
+            height: 80px;
+            border: solid;
+            border-width: 5px;
+            border-color: blue;
         }
 
-        .element {
-            margin: 5px;
-            padding: 10px;
-            border: 1px solid #0e0e0e;
-            cursor: pointer;
-            background-color: #fff;
+        .green {
+            background-color: green;
         }
 
-        .correct {
-            background-color: rgb(19, 234, 19) !important;
-            position: relative;
-            top: 0;
-            left: 0;
+        .red {
+            background-color: red;
         }
 
-        .incorrect {
-            background-color: red !important;
+        .white {
+            background-color: white;
         }
     </style>
-    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
-    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 </head>
-
 <body>
-    <div class="container">
-        <div class="left">
-            <div class="element" data-country="USA">Washington, D.C.</div>
-            <div class="element" data-country="Canada">Ottawa</div>
-            <div class="element" data-country="India">Delhi</div>
+    <div class="row">
+        <div class="col-sm-6">
+            <div class="town" id="india-1">New Delhi</div>
+            <br /><br />
+            <div class="town" id="pakistan-1">Lahore</div>
         </div>
-        <div class="right">
-            <div class="element" data-country="USA">United States</div>
-            <div class="element" data-country="Canada">Canada</div>
-            <div class="element" data-country="India">India</div>
+        <div class="col-sm-6">
+            <div class="country" id="india">India</div>
+            <br /><br />
+            <div class="country" id="pakistan">Pakistan</div>
         </div>
     </div>
-
-    <script>
+    <script type="text/javascript">
         $(document).ready(function () {
-            $(".element").draggable({
-                revert: "invalid",
-                cursor: "move"
+            $(".town").draggable({
+                revert: true // Set revert to true so that it goes back to the original position if dropped in an invalid location
             });
 
-            $(".element").droppable({
-                accept: ".element",
+            $(".country").droppable({
                 drop: function (event, ui) {
-                    var draggedElement = ui.helper;
-                    var country = $(this).data("country");
-                    var droppedCountry = draggedElement.data("country");
-
-                    if (country === droppedCountry) {
-                        draggedElement.addClass("correct");
-                        $(this).addClass("correct");
-                        $(this).droppable("disable");
+                    var arrTown = ui.draggable.attr("id").split("-");
+                    if ($(this).attr("id") === arrTown[0]) {
+                        $(this).removeClass("white").removeClass("red").addClass("green");
+                        ui.draggable.removeClass("white").removeClass("red").addClass("green");
                     } else {
-                        draggedElement.addClass("incorrect");
-                        $(this).addClass("incorrect");
+                        $(this).removeClass("white").removeClass("green").addClass("red");
+                        ui.draggable.removeClass("white").removeClass("green").addClass("red");
                     }
+                },
+                out: function (event, ui) {
+                    $(this).removeClass("green").removeClass("red").addClass("white");
+                    ui.draggable.removeClass("green").removeClass("red").addClass("white");
                 }
             });
-
-            $(".left, .right").sortable({
-                connectWith: ".container",
-                tolerance: "pointer",
-                receive: function (event, ui) {
-                    $(".element").removeClass("correct incorrect");
-                    $(".element").droppable("enable");
-                }
-            }).disableSelection();
         });
     </script>
 </body>
-
 </html>
