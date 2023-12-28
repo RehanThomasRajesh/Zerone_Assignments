@@ -8,6 +8,20 @@
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <style>
+        .card {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        #communicationForm {
+            width: 100%;
+            max-width: 400px;
+            /* Adjust the max-width as needed */
+        }
+    </style>
     <script>
         $(document).ready(function () {
             $('#submitBtn').click(function (e) {
@@ -23,38 +37,49 @@
                     $('#mobileNumber').after('<div class="text-danger error-message">Mobile Number should not exceed 20 characters.</div>');
                 }
             });
+            $('#previousBtn').click(function () {
+                // Update the URL or path to the Basic Details page
+                window.location.href = 'Basic_Details.html';
+            });
         });
     </script>
 
-    <title>Comunication Details</title>
+    <title>Communication Details</title>
 </head>
 
 <body>
-    <h1>Communication Details</h1>
-    <form id="communicationForm" action="Education_Details.html">
-        <div class="form-group">
-            <label for="email">Email</label>
-            <input type="email" class="form-control" id="email" maxlength="100" required>
+    <div class="container mt-5">
+        <div class="card">
+            <div class="card-header">Communication Details
+            </div>
+            <div class="card-body">
+                <form id="communicationForm" action="Education_Details.html">
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" class="form-control" id="email" maxlength="100" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="mobileNumber">Mobile Number</label>
+                        <input type="text" class="form-control" id="mobileNumber" maxlength="20" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="alternateNumber">Alternate Phone Number</label>
+                        <input type="text" class="form-control" id="alternateNumber" maxlength="20">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="postalAddress">Postal Address</label>
+                        <textarea class="form-control" id="postalAddress" rows="5" cols="50" required></textarea>
+                    </div>
+
+                    <button type="submit" id="submitBtn" class="btn btn-primary">Submit</button>
+                    <button type="button" id="previousBtn" class="btn btn-secondary">Previous</button>
+                </form>
+            </div>
         </div>
-
-        <div class="form-group">
-            <label for="mobileNumber">Mobile Number</label>
-            <input type="text" class="form-control" id="mobileNumber" maxlength="20" required>
-        </div>
-
-        <div class="form-group">
-            <label for="alternateNumber">Alternate Phone Number</label>
-            <input type="text" class="form-control" id="alternateNumber" maxlength="20">
-        </div>
-
-        <div class="form-group">
-            <label for="postalAddress">Postal Address</label>
-            <textarea class="form-control" id="postalAddress" rows="5" cols="50" required></textarea>
-        </div>
-
-        <button type="submit" id="submitBtn" class="btn btn-primary">Submit</button>
-    </form>
-
+    </div>
 </body>
 
 </html>

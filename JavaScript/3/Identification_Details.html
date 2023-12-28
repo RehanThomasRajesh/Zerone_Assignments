@@ -19,7 +19,7 @@
             var passportExpiryMonth = document.getElementById('passportExpiryMonth').value;
             var passportExpiryYear = document.getElementById('passportExpiryYear').value;
             var pfAccountNumber = document.getElementById('pfAccountNumber').value;
-    
+
             if (aadharNumber.trim() === '') {
                 alert('Aadhar Number is mandatory.');
                 return false;
@@ -28,72 +28,109 @@
                 alert('Aadhar Number should not exceed 16 characters.');
                 return false;
             }
-    
+
             if (panNumber.length > 10) {
                 alert('PAN Number should not exceed 10 characters.');
                 return false;
             }
-    
+
             if (passportNumber.length > 8) {
                 alert('Passport Number should not exceed 8 characters.');
                 return false;
             }
-    
+
             if (passportExpiryMonth === '' || passportExpiryYear === '') {
                 alert('Please select both month and year for Passport Expiry.');
                 return false;
             }
-    
+
             if (pfAccountNumber.length > 20) {
                 alert('PF Account Number should not exceed 20 characters.');
                 return false;
             }
-    
+
             console.log('Form submission prevented by validation function.');
-    
+
             return true;
         }
     </script>
 </head>
+
 <body>
-    <h2>Identification Details</h2>
-    <div class="container">
-        <form action="comments.html" method="post" onsubmit="return validateIdentificationDetails()">
-            <div class="row">
-                <div class="col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6">
-                    <div class="form-group">
-                        <label for="aadharNumber">Aadhar Number:</label>
-                        <input type="text" class="form-control" id="aadharNumber" maxlength="16" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="panNumber">PAN Number:</label>
-                        <input type="text" class="form-control" id="panNumber" maxlength="10">
-                    </div>
-                    <div class="form-group">
-                        <label for="passportNumber">Passport Number:</label>
-                        <input type="text" class="form-control" id="passportNumber" maxlength="8">
-                    </div>
-                </div>
-                <div class="col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6">
-                    <div class="form-group">
-                        <label for="passportExpiry">Passport Expiry:</label>
-                        <select class="form-control" id="passportExpiryMonth" required>
-                        </select>
-                        <select class="form-control" id="passportExpiryYear" required>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label for="pfAccountNumber">PF Account Number:</label>
-                        <input type="text" class="form-control" id="pfAccountNumber" maxlength="20">
-                    </div>
-                </div>
+    <div class="container mt-5">
+        <div class="card">
+            <div class="card-header">
+                Idetification Details
             </div>
-            <div class="row">
-                <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
-                    <button type="submit" class="btn btn-primary">Next</button>
-                </div>
+            <div class="card-body">
+                <form action="comments.html" method="post" onsubmit="return validateIdentificationDetails()">
+                    <div class="row">
+                        <div class="col-6">
+                            <div class="form-group">
+                                <label for="aadharNumber">Aadhar Number:</label>
+                                <input type="text" class="form-control" id="aadharNumber" maxlength="16" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="panNumber">PAN Number:</label>
+                                <input type="text" class="form-control" id="panNumber" maxlength="10">
+                            </div>
+                            <div class="form-group">
+                                <label for="passportNumber">Passport Number:</label>
+                                <input type="text" class="form-control" id="passportNumber" maxlength="8">
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="form-group">
+                                <label for="passportExpiry">Passport Expiry:</label>
+                                <div class="row">
+                                    <div class="col-6">
+                                        <select class="form-control" id="passportExpiryMonth" required>
+                                            <option value="" selected>Month</option>
+                                            <option value="1">1</option>
+                                            <option value="2">2</option>
+                                            <option value="3">3</option>
+                                            <option value="4">4</option>
+                                            <option value="5">5</option>
+                                            <option value="6">6</option>
+                                            <option value="7">7</option>
+                                            <option value="8">8</option>
+                                            <option value="9">9</option>
+                                            <option value="10">10</option>
+                                            <option value="11">11</option>
+                                            <option value="12">12</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-6">
+                                        <select class="form-control" id="passportExpiryYear" required>
+                                            <option value="" selected>Year</option>
+                                            <option value="2023">2023</option>
+                                            <option value="2024">2024</option>
+                                            <option value="2025">2025</option>
+                                            <option value="2026">2026</option>
+                                            <option value="2027">2027</option>
+                                            <option value="2028">2028</option>
+                                            <option value="2029">2029</option>
+                                            <option value="2030">2030</option>
+                                            <option value="2031">2031</option>
+                                            <option value="2032">2032</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="pfAccountNumber">PF Account Number:</label>
+                                <input type="text" class="form-control" id="pfAccountNumber" maxlength="20">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+                            <button type="submit" class="btn btn-primary">Next</button>
+                        </div>
+                    </div>
+                </form>
             </div>
-        </form>
+        </div>
     </div>
 </body>
 
