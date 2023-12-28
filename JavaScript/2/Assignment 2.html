@@ -44,123 +44,128 @@
 
 <body>
     <div class="container mt-5">
-        <form id="registrationForm" onsubmit="return validateForm()">
-
-            <div class="form-group">
-                <label for="firstName">First Name:</label>
-                <input type="text" id="firstName" name="firstName" class="form-control" maxlength="50" required>
+        <div class="card" style="max-width: 600px; margin: auto;">
+            <div class="card-header text-center">
+                <h4>Registration Form</h4>
             </div>
+            <div class="card-body">
+                <form id="registrationForm" onsubmit="return validateForm()">
 
-            <div class="form-group">
-                <label for="lastName">Last Name:</label>
-                <input type="text" id="lastName" name="lastName" class="form-control" maxlength="50" required>
+                    <div class="form-group">
+                        <label for="firstName">First Name:</label>
+                        <input type="text" id="firstName" name="firstName" class="form-control" maxlength="50" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="lastName">Last Name:</label>
+                        <input type="text" id="lastName" name="lastName" class="form-control" maxlength="50" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Date of Birth:</label>
+                        <select id="dobDay" name="dobDay" class="form-control" required>
+                            <option value="">Day</option>
+                            <!-- Add options for day here, for example: -->
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <!-- Add more options as needed -->
+                        </select>
+
+                        <select id="dobMonth" name="dobMonth" class="form-control" required>
+                            <option value="">Month</option>
+                            <!-- Add options for month here, for example: -->
+                            <option value="1">January</option>
+                            <option value="2">February</option>
+                            <!-- Add more options as needed -->
+                        </select>
+
+                        <select id="dobYear" name="dobYear" class="form-control" required>
+                            <option value="">Year</option>
+                            <!-- Add options for year here, for example: -->
+                            <option value="2022">2022</option>
+                            <option value="2021">2021</option>
+                            <!-- Add more options as needed -->
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="fatherName">Name of Father:</label>
+                        <input type="text" id="fatherName" name="fatherName" class="form-control" maxlength="50">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="motherName">Name of Mother:</label>
+                        <input type="text" id="motherName" name="motherName" class="form-control" maxlength="50">
+                    </div>
+
+                    <div class="form-group">
+                        <label>Gender:</label>
+                        <div class="form-check">
+                            <input type="radio" class="form-check-input" name="gender" value="Male" required>
+                            <label class="form-check-label">Male</label>
+                        </div>
+                        <div class="form-check">
+                            <input type="radio" class="form-check-input" name="gender" value="Female" required>
+                            <label class="form-check-label">Female</label>
+                        </div>
+                        <div class="form-check">
+                            <input type="radio" class="form-check-input" name="gender" value="Other" required>
+                            <label class="form-check-label">Other</label>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="nationality">Nationality:</label>
+                        <select id="nationality" name="nationality" class="form-control" required>
+                            <option value=""></option>
+                            <option value="USA">USA</option>
+                            <option value="UK">UK</option>
+                            <option value="Australia">Australia</option>
+                            <option value="China">China</option>
+                            <option value="India">India</option>
+                            <option value="Japan">Japan</option>
+                            <option value="France">France</option>
+                            <option value="Germany">Germany</option>
+                            <option value="Brazil">Brazil</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="course">Course:</label>
+                        <select id="course" name="course" class="form-control" required>
+                            <option value=""></option>
+                            <option value="B.Tech">B.Tech</option>
+                            <option value="M.Tech">M.Tech</option>
+                            <option value="MCA">MCA</option>
+                            <option value="M.Phil">M.Phil</option>
+                            <option value="Ph. D">Ph. D</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="specialization">Specialization:</label>
+                        <select id="specialization" name="specialization" class="form-control" required>
+                            <option value=""></option>
+                            <option value="ECE">ECE</option>
+                            <option value="CSE">CSE</option>
+                            <option value="ME">ME</option>
+                            <option value="PE">PE</option>
+                            <option value="CE">CE</option>
+                            <option value="AE">AE</option>
+                            <option value="CHE">CHE</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="notes">Notes:</label>
+                        <textarea id="notes" name="notes" class="form-control" cols="50" rows="5"></textarea>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </form>
             </div>
-
-            <div class="form-group">
-                <label>Date of Birth:</label>
-                <select id="dobDay" name="dobDay" class="form-control" required>
-                    <option value="">Day</option>
-                    <!-- Add options for day here, for example: -->
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <!-- Add more options as needed -->
-                </select>
-
-                <select id="dobMonth" name="dobMonth" class="form-control" required>
-                    <option value="">Month</option>
-                    <!-- Add options for month here, for example: -->
-                    <option value="1">January</option>
-                    <option value="2">February</option>
-                    <!-- Add more options as needed -->
-                </select>
-
-                <select id="dobYear" name="dobYear" class="form-control" required>
-                    <option value="">Year</option>
-                    <!-- Add options for year here, for example: -->
-                    <option value="2022">2022</option>
-                    <option value="2021">2021</option>
-                    <!-- Add more options as needed -->
-                </select>
-            </div>
-
-            <div class="form-group">
-                <label for="fatherName">Name of Father:</label>
-                <input type="text" id="fatherName" name="fatherName" class="form-control" maxlength="50">
-            </div>
-
-            <div class="form-group">
-                <label for="motherName">Name of Mother:</label>
-                <input type="text" id="motherName" name="motherName" class="form-control" maxlength="50">
-            </div>
-
-            <div class="form-group">
-                <label>Gender:</label>
-                <div class="form-check">
-                    <input type="radio" class="form-check-input" name="gender" value="Male" required>
-                    <label class="form-check-label">Male</label>
-                </div>
-                <div class="form-check">
-                    <input type="radio" class="form-check-input" name="gender" value="Female" required>
-                    <label class="form-check-label">Female</label>
-                </div>
-                <div class="form-check">
-                    <input type="radio" class="form-check-input" name="gender" value="Other" required>
-                    <label class="form-check-label">Other</label>
-                </div>
-            </div>
-
-            <div class="form-group">
-                <label for="nationality">Nationality:</label>
-                <select id="nationality" name="nationality" class="form-control" required>
-                    <option value=""></option>
-                    <option value="USA">USA</option>
-                    <option value="UK">UK</option>
-                    <option value="Australia">Australia</option>
-                    <option value="China">China</option>
-                    <option value="India">India</option>
-                    <option value="Japan">Japan</option>
-                    <option value="France">France</option>
-                    <option value="Germany">Germany</option>
-                    <option value="Brazil">Brazil</option>
-                </select>
-            </div>
-
-            <div class="form-group">
-                <label for="course">Course:</label>
-                <select id="course" name="course" class="form-control" required>
-                    <option value=""></option>
-                    <option value="B.Tech">B.Tech</option>
-                    <option value="M.Tech">M.Tech</option>
-                    <option value="MCA">MCA</option>
-                    <option value="M.Phil">M.Phil</option>
-                    <option value="Ph. D">Ph. D</option>
-                </select>
-            </div>
-
-            <div class="form-group">
-                <label for="specialization">Specialization:</label>
-                <select id="specialization" name="specialization" class="form-control" required>
-                    <option value=""></option>
-                    <option value="ECE">ECE</option>
-                    <option value="CSE">CSE</option>
-                    <option value="ME">ME</option>
-                    <option value="PE">PE</option>
-                    <option value="CE">CE</option>
-                    <option value="AE">AE</option>
-                    <option value="CHE">CHE</option>
-                </select>
-            </div>
-
-            <div class="form-group">
-                <label for="notes">Notes:</label>
-                <textarea id="notes" name="notes" class="form-control" cols="50" rows="5"></textarea>
-            </div>
-
-            <button type="submit" class="btn btn-primary">Submit</button>
-        </form>
+        </div>
     </div>
-
-
 </body>
 
 </html>
