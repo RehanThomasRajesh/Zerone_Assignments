@@ -6,6 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Employee Details Form</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.4.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 </head>
 
@@ -68,7 +71,6 @@
                             <option value="">Select</option>
                             <option value="US">United States</option>
                             <option value="India">India</option>
-                            <!-- Add other countries... -->
                         </select>
                         <span class="error"></span>
                     </div>
@@ -130,11 +132,11 @@
 
                 var country = $("#country").val();
                 var zipCode = $("#zipCode").val();
-                if ((country === "India" && zipCode.length !== 6) || (country !== "India" && zipCode.length !== 7)) {
+                if ((country === "US" && zipCode.length !== 5) || (country !== "US" && zipCode.length !== 6)) {
                     valid = false;
                     $("#zipCode").next(".error").text("Invalid zip code.");
                 }
-
+                
                 if (valid) {
                     alert("Form submitted successfully!");
                 }
@@ -147,9 +149,7 @@
         });
     </script>
 
-    <script src="https://code.jquery.com/jquery-3.6.4.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    
 </body>
 
 </html>
