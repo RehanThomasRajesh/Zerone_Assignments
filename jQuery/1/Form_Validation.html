@@ -5,59 +5,93 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Employee Details Form</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.4.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 </head>
 
 <body>
-    <h1>Employee Details Form</h1>
-    <form>
-        <label for="firstName">First Name:</label>
-        <input type="text" id="firstName" name="firstName">
-        <span class="error"></span><br>
+    <div class="container mt-5">
+        <div class="card">
+            <div class="card-header">
+                <h1 class="text-center">Employee Details Form</h1>
+            </div>
+            <div class="card-body">
+                <form>
+                    <div class="form-group">
+                        <label for="firstName">First Name:</label>
+                        <input type="text" class="form-control" id="firstName" name="firstName">
+                        <span class="error"></span>
+                    </div>
 
-        <label for="lastName">Last Name:</label>
-        <input type="text" id="lastName" name="lastName">
-        <span class="error"></span><br>
+                    <div class="form-group">
+                        <label for="lastName">Last Name:</label>
+                        <input type="text" class="form-control" id="lastName" name="lastName">
+                        <span class="error"></span>
+                    </div>
 
-        <label for="gender">Gender:</label>
-        <input type="radio" id="male" name="gender" value="male"> Male
-        <input type="radio" id="female" name="gender" value="female"> Female
-        <span class="error"></span><br>
+                    <div class="form-group">
+                        <label for="gender">Gender:</label>
+                        <div>
+                            <input type="radio" id="male" name="gender" value="male"> Male
+                            <input type="radio" id="female" name="gender" value="female"> Female
+                        </div>
+                        <span class="error"></span>
+                    </div>
 
-        <label for="personalEmail">Personal Email:</label>
-        <input type="email" id="personalEmail" name="personalEmail">
-        <span class="error"></span><br>
+                    <div class="form-group">
+                        <label for="personalEmail">Personal Email:</label>
+                        <input type="email" class="form-control" id="personalEmail" name="personalEmail">
+                        <span class="error"></span>
+                    </div>
 
-        <label for="password">Password:</label>
-        <input type="password" id="password" name="password">
-        <span class="error"></span><br>
+                    <div class="form-group">
+                        <label for="password">Password:</label>
+                        <input type="password" class="form-control" id="password" name="password">
+                        <span class="error"></span>
+                    </div>
 
-        <label for="confirmPassword">Confirm Password:</label>
-        <input type="password" id="confirmPassword" name="confirmPassword">
-        <span class="error"></span><br>
+                    <div class="form-group">
+                        <label for="confirmPassword">Confirm Password:</label>
+                        <input type="password" class="form-control" id="confirmPassword" name="confirmPassword">
+                        <span class="error"></span>
+                    </div>
 
-        <label for="postalAddress">Postal Address:</label>
-        <input type="text" id="postalAddress" name="postalAddress">
-        <span class="error"></span><br>
+                    <div class="form-group">
+                        <label for="postalAddress">Postal Address:</label>
+                        <input type="text" class="form-control" id="postalAddress" name="postalAddress">
+                        <span class="error"></span>
+                    </div>
 
-        <label for="country">Country:</label>
-        <select id="country" name="country">
-            <option value="">Select</option>
-            <option value="US">United States</option>
-            <option value="India"></option>
-            <!-- Add other countries... -->
-        </select>
-        <span class="error"></span><br>
+                    <div class="form-group">
+                        <label for="country">Country:</label>
+                        <select class="form-control" id="country" name="country">
+                            <option value="">Select</option>
+                            <option value="US">United States</option>
+                            <option value="India">India</option>
+                            <!-- Add other countries... -->
+                        </select>
+                        <span class="error"></span>
+                    </div>
 
-        <label for="zipCode">Zip Code:</label>
-        <input type="text" id="zipCode" name="zipCode">
-        <span class="error"></span><br>
+                    <div class="form-group">
+                        <label for="zipCode">Zip Code:</label>
+                        <input type="text" class="form-control" id="zipCode" name="zipCode">
+                        <span class="error"></span>
+                    </div>
 
-        <label for="transportation">Need Transportation?</label>
-        <input type="checkbox" id="transportation" name="transportation"><br>
+                    <div class="form-group">
+                        <label for="transportation">Need Transportation?</label>
+                        <input type="checkbox" id="transportation" name="transportation">
+                    </div>
 
-        <input type="button" value="Submit" id="submitBtn">
-    </form>
+                    <button type="button" class="btn btn-primary" id="submitBtn">Submit</button>
+                </form>
+            </div>
+        </div>
+    </div>
 
     <script>
         $(document).ready(function () {
@@ -115,6 +149,8 @@
             }
         });
     </script>
+
+    
 </body>
 
 </html>
