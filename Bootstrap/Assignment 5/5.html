@@ -9,8 +9,8 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
 
-  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.11.6/umd/popper.min.js"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
 
 </head>
@@ -233,6 +233,8 @@
             <div class="col-4 col-sm-4 col-md-4 col-lg-4 col-xl-4">
               <div class="card mb-3" style="width: 18rem;">
                 <div class="card-body">
+                  <img src="logo-lab.png" alt="Profile Image" class="rounded-circle "
+                    style="width: 30px; height: 30px;">
                   <h5 class="card-title">Laboratory Services</h5>
                   <p class="card-text">Saepe nulla prasentium eaque omnis perferendis a doloremque</p>
                 </div>
@@ -241,6 +243,8 @@
             <div class="col-4 col-sm-4 col-md-4 col-lg-4 col-xl-4">
               <div class="card mb-3" style="width: 18rem;">
                 <div class="card-body">
+                  <img src="logo-heart.jpg" alt="Profile Image" class="rounded-circle "
+                    style="width: 30px; height: 30px;">
                   <h5 class="card-title">Heart Disease</h5>
                   <p class="card-text">Saepe nulla prasentium eaque omnis perferendis a doloremque</p>
                 </div>
@@ -249,6 +253,8 @@
             <div class="col-4 col-sm-4 col-md-4 col-lg-4 col-xl-4">
               <div class="card mb-3" style="width: 18rem;">
                 <div class="card-body">
+                  <img src="logo-tooth.jpg" alt="Profile Image" class="rounded-circle "
+                    style="width: 30px; height: 30px;">
                   <h5 class="card-title">Dental Care</h5>
                   <p class="card-text">Saepe nulla prasentium eaque omnis perferendis a doloremque</p>
                 </div>
@@ -259,6 +265,8 @@
             <div class="col-4 col-sm-4 col-md-4 col-lg-4 col-xl-4">
               <div class="card mb-3" style="width: 18rem;">
                 <div class="card-body">
+                  <img src="logo-body.png" alt="Profile Image" class="rounded-circle "
+                  style="width: 30px; height: 30px;">
                   <h5 class="card-title">Body Surgery</h5>
                   <p class="card-text">Saepe nulla prasentium eaque omnis perferendis a doloremque</p>
                 </div>
@@ -267,7 +275,9 @@
             <div class="col-4 col-sm-4 col-md-4 col-lg-4 col-xl-4">
               <div class="card mb-3" style="width: 18rem;">
                 <div class="card-body">
-                  <h5 class="card-title">Newrology Sargery</h5>
+                  <img src="logo-brain.jpg" alt="Profile Image" class="rounded-circle "
+                  style="width: 30px; height: 30px;">
+                  <h5 class="card-title">Neurology Sargery</h5>
                   <p class="card-text">Saepe nulla prasentium eaque omnis perferendis a doloremque</p>
                 </div>
               </div>
@@ -275,6 +285,8 @@
             <div class="col-4 col-sm-4 col-md-4 col-lg-4 col-xl-4">
               <div class="card mb-3" style="width: 18rem;">
                 <div class="card-body">
+                  <img src="logo-gene.png" alt="Profile Image" class="rounded-circle "
+                  style="width: 30px; height: 30px;">
                   <h5 class="card-title">Gynecology</h5>
                   <p class="card-text">Saepe nulla prasentium eaque omnis perferendis a doloremque</p>
                 </div>
@@ -292,30 +304,27 @@
                 doloremque praesentium minima saepe aliquam. </p>
               <div class="row">
                 <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 mb-3">
-                  <div class="dropdown">
-                    <button type="button" class="btn btn dropdown-toggle" data-toggle="dropdown">
-                      Choose Department
-                    </button>
-                    <div class="dropdown-menu">
-                      <a class="dropdown-item" href="#">Link 1</a>
-                      <a class="dropdown-item" href="#">Link 2</a>
-                      <a class="dropdown-item" href="#">Link 3</a>
-                    </div>
+                  <div class="form-group">
+                    <select class="form-control" id="department" name="department">
+                      <option value="" selected>Choose Department</option>
+                      <option value="link1">Dept1</option>
+                      <option value="link2">Dept2</option>
+                      <option value="link3">Dept3</option>
+                    </select>
                   </div>
                 </div>
                 <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 mb-3">
-                  <div class="dropdown">
-                    <button type="button" class="btn btn dropdown-toggle" data-toggle="dropdown">
-                      Select Doctors
-                    </button>
-                    <div class="dropdown-menu">
-                      <a class="dropdown-item" href="#">Link 1</a>
-                      <a class="dropdown-item" href="#">Link 2</a>
-                      <a class="dropdown-item" href="#">Link 3</a>
-                    </div>
+                  <div class="form-group">
+                    <select class="form-control" id="department" name="department">
+                      <option value="" selected>Select Doctors</option>
+                      <option value="link1">Doc1</option>
+                      <option value="link2">Doc2</option>
+                      <option value="link3">Doc3</option>
+                    </select>
                   </div>
                 </div>
               </div>
+
               <div class="row">
                 <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 mb-3">
                   <input type="date" class="form-control" placeholder="dd/mm/yy">
@@ -337,7 +346,7 @@
                   <textarea name="" id="" cols="30" rows="10" class="form-control"
                     placeholder="Your Message"></textarea>
                 </div>
-              </div>
+              </div><br>
               <div class="row">
                 <div class="col-12">
                   <button class="btn btn-primary">Make Appointment</button>
@@ -357,7 +366,11 @@
             <div class="col-md-6">
               <div class="card bg-light mb-3 border-0">
                 <div class="card-body">
-                  <h6 class="card-title">Nice Environment</h6>
+                  <div class="d-flex align-items-center mb-3">
+                    <img src="test-thumb3.jpg" alt="Profile Image" class="rounded-circle mr-2"
+                      style="width: 30px; height: 30px;">
+                    <h6 class="card-title">Nice Environment</h6>
+                  </div>
                   <p class="text-muted small">Partho Sarothi</p>
                   <p class="card-text text-muted">They provide a great service facility consectetur adipisicing elit.
                     Itaque rem,
@@ -368,7 +381,11 @@
             <div class="col-md-6">
               <div class="card bg-light mb-3 border-0">
                 <div class="card-body">
-                  <h6 class="card-title">Modern Service!</h6>
+                  <div class="d-flex align-items-center mb-3">
+                    <img src="test-thumb4.jpg" alt="Profile Image" class="rounded-circle mr-2"
+                      style="width: 30px; height: 30px;">
+                    <h6 class="card-title">Modern Service!</h6>
+                  </div>
                   <p class="text-muted small">Kolis Mullar</p>
                   <p class="card-text text-muted">They provide a great service facility consectetur adipisicing elit.
                     Itaque rem,
@@ -376,24 +393,55 @@
                 </div>
               </div>
             </div>
+
           </div>
 
 
           <br><br>
           <div class="row text-center">
             <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
-              <h3 class="text-primary">Partners who supports us</h3>
-              <p class="text-muted small">Lets know moreel necessitatibs dolor asperiroes illum possimus sint voluptates
-                incident <br>
-                molestias nostrum laudantium. Malirues porro xumque quaerat.</p>
+              <h3 class="text-primary">Partners who support us</h3>
+              <p class="text-muted small">Learn more about our partnerships and supporters.</p>
             </div>
-          </div><br><br>
-          <div class="jumbotron">
+          </div>
+          
+          <div class="row justify-content-center">
+            <div class="col-2 col-sm-2 col-md-2 col-lg-2 col-xl-2 mb-2">
+              <img src="company_logo1.jpg" alt="Company Logo 1" class="rounded-circle mr-2"
+              style="width: 100px; height: 100px;">
+            </div>
+            <div class="col-2 col-sm-2 col-md-2 col-lg-2 col-xl-2 mb-2">
+              <img src="company_logo2.png" alt="Company Logo 2" class="rounded-circle mr-2"
+              style="width: 100px; height: 100px;">
+            </div>
+            <div class="col-2 col-sm-2 col-md-2 col-lg-2 col-xl-2 mb-2">
+              <img src="company_logo3.jpg" alt="Company Logo 3" class="rounded-circle mr-2"
+              style="width: 100px; height: 100px;">
+            </div>
+            <div class="col-2 col-sm-2 col-md-2 col-lg-2 col-xl-2 mb-2">
+              <img src="company_logo4.jpg" alt="Company Logo 4" class="rounded-circle mr-2"
+              style="width: 100px; height: 100px;">
+            </div>
+            <div cclass="col-2 col-sm-2 col-md-2 col-lg-2 col-xl-2 mb-2">
+              <img src="company_logo5.jpg" alt="Company Logo 5" class="rounded-circle mr-2"
+              style="width: 100px; height: 100px;">
+            </div>
+            <div cclass="col-2 col-sm-2 col-md-2 col-lg-2 col-xl-2 mb-2">
+              <img src="company_logo6.jpg" alt="Company Logo 6" class="rounded-circle mr-2"
+              style="width: 100px; height: 100px;">
+            </div>
+          </div>
+          <br><br>
+          <div class="custom-jumbotron bg-light-gray p-4">
             <div class="row">
               <div class="col-4 col-sm-4 col-md-4 col-lg-4 col-xl-4">
                 <img src="logo.png" alt="">
-                <p class="text-muted small">Tempora dolorem voluptaturn namvero <br> assumenda voluptate, facilis as eos
+                <p class="text-muted small">Tempora dolorem voluptaturn namvero <br> assumenda voluptate, facilis as
+                  eos
                   obcaecati <br> tenetur veritstis eveniet distinctio possimus</p>
+                <i class="fab fa-facebook-f"></i>
+                <i class="fab fa-twitter"></i>
+                <i class="fab fa-instagram"></i>
               </div>
               <div class="col-2 col-sm-2 col-md-2 col-lg-2 col-xl-2">
                 <h3 class="text-primary">Department</h3>
@@ -411,11 +459,12 @@
                 <p class="text-muted">FAQuestions</p>
                 <p class="text-muted">Company Licence</p>
               </div>
-              <div class="col-4 col-sm-4 col-md-4 col-lg-4 col-xl-4">
+
+              <div class="col-2 col-sm-2 col-md-2 col-lg-2 col-xl-2">
                 <h3 class="text-primary">Get in Touch</h3>
-                <p class="text-muted small"><i class="fas fa-envelope"></i> Support Availale for 24/7</p>
+                <p class="text-muted small"><i class="fas fa-envelope"></i> Support Available 24/7</p>
                 <p>support@email.com</p>
-                <p class="text-muted small"><i class="fas fa-life-ring"></i> Mon to fri: 08:30-18:00</p>
+                <p class="text-muted small"><i class="fas fa-life-ring"></i> Mon to Fri: 08:30-18:00</p>
                 <p>+23-456-6588</p>
               </div>
             </div>
@@ -433,6 +482,7 @@
               </div>
             </div>
           </div>
+
         </div>
       </div>
     </div>
