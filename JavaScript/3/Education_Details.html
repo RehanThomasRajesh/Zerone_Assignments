@@ -44,105 +44,112 @@
 </head>
 
 <body>
-    <h2>Education Details</h2>
 
     <div class="container mt-5 g-3">
-        <form action="Work_Experience.html" method="post" onsubmit="return validateForm()">
-            <div class="form-group row">
-                <div class="col-3 col-sm-3 col-md-3 col-lg-3 col-xl-3"><label for="course"
-                        class="form-label">Course:</label><input type="text" class="form-control" id="course" required>
-                </div>
-                <div class="col-3 col-sm-3 col-md-3 col-lg-3 col-xl-3"><label for="specialization"
-                        class="form-label">Specialization:</label><input type="text" class="form-control"
-                        id="specialization" required></div>
-                <div class="col-3 col-sm-3 col-md-3 col-lg-3 col-xl-3">
-                    <label for="yearOfPassing" class="form-label">Year of Passing</label>
-                    <select class="form-control" id="yearOfPassing" name="yearOfPassing" required>
-                        <option value="2016">2016</option>
-                        <option value="2017">2017</option>
-                        <option value="2018">2018</option>
-                        <option value="2019">2019</option>
-                        <option value="2020">2020</option>
-                        <option value="2021">2021</option>
-                        <option value="2022">2022</option>
-                        <option value="2023">2023</option>
-                        <option value="2024">2024</option>
-                    </select>
-                </div>
-                <div class="col-3 col-sm-3 col-md-3 col-lg-3 col-xl-3"><label for="grade" class="form-label">Grade /
-                        Mark</label><input type="text" class="form-control" id="grade" required></div>
+        <div class="card">
+            <div class="card-header">
+                <h2>Education Details</h2>
             </div>
-            <div class="form-group row">
-                <div class="col-3 col-sm-3 col-md-3 col-lg-3 col-xl-3"><input type="text" class="form-control"
-                        id="field1" required></div>
-                <div class="col-3 col-sm-3 col-md-3 col-lg-3 col-xl-3"><input type="text" class="form-control"
-                        id="field2" required></div>
-                <div class="col-3 col-sm-3 col-md-3 col-lg-3 col-xl-3">
-                    <select class="form-control" id="yearOfPassing2" name="yearOfPassing" required>
-                        <option value="2016">2016</option>
-                        <option value="2017">2017</option>
-                        <option value="2018">2018</option>
-                        <option value="2019">2019</option>
-                        <option value="2020">2020</option>
-                        <option value="2021">2021</option>
-                        <option value="2022">2022</option>
-                        <option value="2023">2023</option>
-                        <option value="2024">2024</option>
-                    </select>
-                </div>
-                <div class="col-3 col-sm-3 col-md-3 col-lg-3 col-xl-3"><input type="text" class="form-control"
-                        id="field3" required></div>
-            </div>
-            <div class="form-group row">
-                <div class="col-3 col-sm-3 col-md-3 col-lg-3 col-xl-3"><input type="text" class="form-control"
-                        id="field4" required></div>
-                <div class="col-3 col-sm-3 col-md-3 col-lg-3 col-xl-3"><input type="text" class="form-control"
-                        id="field5" required></div>
-                <div class="col-3 col-sm-3 col-md-3 col-lg-3 col-xl-3">
-                    <select class="form-control" id="yearOfPassing3" name="yearOfPassing" required>
-                        <option value="2016">2016</option>
-                        <option value="2017">2017</option>
-                        <option value="2018">2018</option>
-                        <option value="2019">2019</option>
-                        <option value="2020">2020</option>
-                        <option value="2021">2021</option>
-                        <option value="2022">2022</option>
-                        <option value="2023">2023</option>
-                        <option value="2024">2024</option>
-                    </select>
-                </div>
-                <div class="col-3 col-sm-3 col-md-3 col-lg-3 col-xl-3"><input type="text" class="form-control"
-                        id="field6" required></div>
-            </div>
-            <div class="form-group row">
-                <div class="col-3 col-sm-3 col-md-3 col-lg-3 col-xl-3"><input type="text" class="form-control"
-                        id="field7" required></div>
-                <div class="col-3 col-sm-3 col-md-3 col-lg-3 col-xl-3"><input type="text" class="form-control"
-                        id="field8" required></div>
-                <div class="col-3 col-sm-3 col-md-3 col-lg-3 col-xl-3">
-                    <select class="form-control" id="yearOfPassing4" name="yearOfPassing" required>
-                        <option value="2016">2016</option>
-                        <option value="2017">2017</option>
-                        <option value="2018">2018</option>
-                        <option value="2019">2019</option>
-                        <option value="2020">2020</option>
-                        <option value="2021">2021</option>
-                        <option value="2022">2022</option>
-                        <option value="2023">2023</option>
-                        <option value="2024">2024</option>
-                    </select>
-                </div>
-                <div class="col-3 col-sm-3 col-md-3 col-lg-3 col-xl-3"><input type="text" class="form-control"
-                        id="field9" required></div>
-            </div>
+            <div class="card-body">
+                <form action="Work_Experience.html" method="post" onsubmit="return validateForm()">
+                    <div class="form-group row">
+                        <div class="col-3 col-sm-3 col-md-3 col-lg-3 col-xl-3"><label for="course"
+                                class="form-label">Course:</label><input type="text" class="form-control" id="course"
+                                required>
+                        </div>
+                        <div class="col-3 col-sm-3 col-md-3 col-lg-3 col-xl-3"><label for="specialization"
+                                class="form-label">Specialization:</label><input type="text" class="form-control"
+                                id="specialization" required></div>
+                        <div class="col-3 col-sm-3 col-md-3 col-lg-3 col-xl-3">
+                            <label for="yearOfPassing" class="form-label">Year of Passing</label>
+                            <select class="form-control" id="yearOfPassing" name="yearOfPassing" required>
+                                <option value="2016">2016</option>
+                                <option value="2017">2017</option>
+                                <option value="2018">2018</option>
+                                <option value="2019">2019</option>
+                                <option value="2020">2020</option>
+                                <option value="2021">2021</option>
+                                <option value="2022">2022</option>
+                                <option value="2023">2023</option>
+                                <option value="2024">2024</option>
+                            </select>
+                        </div>
+                        <div class="col-3 col-sm-3 col-md-3 col-lg-3 col-xl-3"><label for="grade"
+                                class="form-label">Grade /
+                                Mark</label><input type="text" class="form-control" id="grade" required></div>
+                    </div>
+                    <div class="form-group row">
+                        <div class="col-3 col-sm-3 col-md-3 col-lg-3 col-xl-3"><input type="text" class="form-control"
+                                id="field1" required></div>
+                        <div class="col-3 col-sm-3 col-md-3 col-lg-3 col-xl-3"><input type="text" class="form-control"
+                                id="field2" required></div>
+                        <div class="col-3 col-sm-3 col-md-3 col-lg-3 col-xl-3">
+                            <select class="form-control" id="yearOfPassing2" name="yearOfPassing" required>
+                                <option value="2016">2016</option>
+                                <option value="2017">2017</option>
+                                <option value="2018">2018</option>
+                                <option value="2019">2019</option>
+                                <option value="2020">2020</option>
+                                <option value="2021">2021</option>
+                                <option value="2022">2022</option>
+                                <option value="2023">2023</option>
+                                <option value="2024">2024</option>
+                            </select>
+                        </div>
+                        <div class="col-3 col-sm-3 col-md-3 col-lg-3 col-xl-3"><input type="text" class="form-control"
+                                id="field3" required></div>
+                    </div>
+                    <div class="form-group row">
+                        <div class="col-3 col-sm-3 col-md-3 col-lg-3 col-xl-3"><input type="text" class="form-control"
+                                id="field4" required></div>
+                        <div class="col-3 col-sm-3 col-md-3 col-lg-3 col-xl-3"><input type="text" class="form-control"
+                                id="field5" required></div>
+                        <div class="col-3 col-sm-3 col-md-3 col-lg-3 col-xl-3">
+                            <select class="form-control" id="yearOfPassing3" name="yearOfPassing" required>
+                                <option value="2016">2016</option>
+                                <option value="2017">2017</option>
+                                <option value="2018">2018</option>
+                                <option value="2019">2019</option>
+                                <option value="2020">2020</option>
+                                <option value="2021">2021</option>
+                                <option value="2022">2022</option>
+                                <option value="2023">2023</option>
+                                <option value="2024">2024</option>
+                            </select>
+                        </div>
+                        <div class="col-3 col-sm-3 col-md-3 col-lg-3 col-xl-3"><input type="text" class="form-control"
+                                id="field6" required></div>
+                    </div>
+                    <div class="form-group row">
+                        <div class="col-3 col-sm-3 col-md-3 col-lg-3 col-xl-3"><input type="text" class="form-control"
+                                id="field7" required></div>
+                        <div class="col-3 col-sm-3 col-md-3 col-lg-3 col-xl-3"><input type="text" class="form-control"
+                                id="field8" required></div>
+                        <div class="col-3 col-sm-3 col-md-3 col-lg-3 col-xl-3">
+                            <select class="form-control" id="yearOfPassing4" name="yearOfPassing" required>
+                                <option value="2016">2016</option>
+                                <option value="2017">2017</option>
+                                <option value="2018">2018</option>
+                                <option value="2019">2019</option>
+                                <option value="2020">2020</option>
+                                <option value="2021">2021</option>
+                                <option value="2022">2022</option>
+                                <option value="2023">2023</option>
+                                <option value="2024">2024</option>
+                            </select>
+                        </div>
+                        <div class="col-3 col-sm-3 col-md-3 col-lg-3 col-xl-3"><input type="text" class="form-control"
+                                id="field9" required></div>
+                    </div>
 
-            <div class="form-group row">
-                <div class="col-6 col-sm-6 col-md-6 col-lg-6 col-xl-6">
-                    <button type="submit" class="btn btn-primary">Next</button>
-                </div>
+                    <div class="form-group row">
+                        <div class="col-6 col-sm-6 col-md-6 col-lg-6 col-xl-6">
+                            <button type="submit" class="btn btn-primary">Next</button>
+                        </div>
+                    </div>
+                </form>
             </div>
-        </form>
-    </div>
+        </div>
 </body>
 
 </html>
