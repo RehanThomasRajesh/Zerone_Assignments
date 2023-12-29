@@ -132,12 +132,15 @@
 
                 var country = $("#country").val();
                 var zipCode = $("#zipCode").val();
-                if ((country === "US" && zipCode.length !== 5) || (country !== "US" && zipCode.length !== 6)) {
+                if ((country === "US" && zipCode.length !== 5) || (country !== "US" && zipCode.length !== 6)) 
+                {
                     valid = false;
                     $("#zipCode").next(".error").text("Invalid zip code.");
                 }
                 
-                if (valid) {
+                
+                if (valid) 
+                {
                     alert("Form submitted successfully!");
                 }
             });
