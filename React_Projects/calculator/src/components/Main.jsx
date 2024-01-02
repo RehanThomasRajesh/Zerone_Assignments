@@ -36,20 +36,20 @@ const Main = () => {
     };
 
     return (
-        <div className="container text-center item">
+        <div className="container text-center ">
             <div className="row">
                 <div className="col-6 col-sm-6 col-md-6 col-lg-6 col-xl-6">
                     <div className="card">
-                        <div className="card-body text-center">
+                        <div className="card-body text-center item-center"> 
                             <div className="row g-3">
                                 <div className="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
                                     <input type="text" className="form-control  bg-secondary text-white" value={input} />
                                 </div>
                                 <div className="col-3 col-sm-3 col-md-3 col-lg-3 col-xl-3">
-                                    <button className="btn btn-light  border btn-block" onClick={handleClear}>AC</button>
+                                    <button className="btn btn-light  border " onClick={handleClear}>AC</button>
                                 </div>
                                 <div className="col-3 col-sm-3 col-md-3 col-lg-3 col-xl-3">
-                                    <button className="btn btn-light border btn-block">+/-</button>
+                                    <button className="btn btn-light border  btn-block">+/-</button>
                                 </div>
                                 <div className="col-3 col-sm-3 col-md-3 col-lg-3 col-xl-3">
                                     <button className="btn btn-light  border" onClick={()=> handlePercentage('%')}>%</button>
