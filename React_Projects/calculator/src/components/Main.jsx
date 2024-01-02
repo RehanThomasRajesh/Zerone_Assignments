@@ -39,7 +39,7 @@ const Main = () => {
         <div className="container text-center ">
             <div className="row">
                 <div className="col-6 col-sm-6 col-md-6 col-lg-6 col-xl-6">
-                    <div className="card">
+                    <div className="card " m-0 p-0>
                         <div className="card-body text-center item-center"> 
                             <div className="row g-3">
                                 <div className="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
