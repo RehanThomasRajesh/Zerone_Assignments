@@ -52,7 +52,6 @@ const List = () => {
         const value = e.target.value.toLowerCase();
         setInputValue(value);
 
-        // Filter countries based on the input value
         const filtered = countries.filter(country => country.toLowerCase().startsWith(value));
         setFilteredCountries(filtered);
 
