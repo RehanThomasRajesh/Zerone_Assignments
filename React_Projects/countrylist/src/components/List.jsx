@@ -43,7 +43,6 @@ const List = () => {
         "Yemen", "Zambia", "Zimbabwe"
     ];
 
-
     const [inputValue, setInputValue] = useState('');
     const [filteredCountries, setFilteredCountries] = useState([]);
     const [showList, setShowList] = useState(false);
@@ -52,7 +51,7 @@ const List = () => {
         const value = e.target.value.toLowerCase();
         setInputValue(value);
 
-        const filtered = countries.filter(country => country.toLowerCase().startsWith(value));
+        const filtered = countries.filter(country => country.toLowerCase().includes(value));
         setFilteredCountries(filtered);
 
         setShowList(true);
@@ -67,7 +66,8 @@ const List = () => {
         <div className="container">
             <div className="row">
                 <div className="col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6">
-                    <input type="text" value={inputValue} placeholder="Type a country" onChange={handleInputChange} /></div>
+                    <input type="text" value={inputValue} placeholder="Type a country" onChange={handleInputChange} />
+                </div>
                 {showList && (
                     <ul>
                         {filteredCountries.map((country, index) => (
@@ -77,7 +77,6 @@ const List = () => {
                         ))}
                     </ul>
                 )}
-
             </div>
         </div>
     );

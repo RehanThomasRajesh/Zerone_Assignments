@@ -1,13 +1,17 @@
-// Authentication.js
+// AuthenticationForm.js
 import React, { useState } from 'react';
+import { useHistory } from 'react-router-dom'; // Import useHistory from react-router-dom
 
 const AuthenticationForm = () => {
+  const [username, setUsername] = useState('');
+  const [password, setPassword] = useState('');
   const [authToken, setAuthToken] = useState(null);
+  const history = useHistory(); // Get the history object from react-router-dom
 
   const authenticateUser = async () => {
     const authData = {
-      username: 'admin',
-      password: 'Admin',
+      username: username,
+      password: password,
     };
 
     try {
@@ -28,6 +32,9 @@ const AuthenticationForm = () => {
 
         // Update the authToken state
         setAuthToken(token);
+
+        // Redirect to another page upon successful authentication
+        history.push('/dashboard'); // Replace '/dashboard' with the desired route
       } else {
         // Handle authentication failure
         console.error('Authentication failed:', response.status);
@@ -53,7 +60,19 @@ const AuthenticationForm = () => {
           <button onClick={logout}>Logout</button>
         </div>
       ) : (
-        <button onClick={authenticateUser}>Authenticate</button>
+        <div>
+          <label>
+            Username:
+            <input type="text" value={username} onChange={(e) => setUsername(e.target.value)} />
+          </label>
+          <br />
+          <label>
+            Password:
+            <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} />
+          </label>
+          <br />
+          <button onClick={authenticateUser}>Authenticate</button>
+        </div>
       )}
     </div>
   );
