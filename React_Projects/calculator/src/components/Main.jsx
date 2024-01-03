@@ -23,9 +23,7 @@ const Main = () => {
         } catch (error) {
             setInput('Error');
         }
-        setTimeout(() => {
-            setInput('');
-        }, 2000); 
+        
     };
     const handlePercentage = () => {
         try {
