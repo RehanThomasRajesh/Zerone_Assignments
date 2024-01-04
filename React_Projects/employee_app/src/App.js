@@ -1,14 +1,21 @@
 import logo from './logo.svg';
 import './App.css';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import AuthenticationForm from './components/AuthenticationForm';
-import EmployeeList from './components/EmployeeList';
-import AddEmployeeForm from './components/AddEmployeeForm';
+import AuthService from './components/AuthService';
 import EmployeeCard from './components/EmployeeCard';
+import AddEmployeeForm from './components/AddEmployeeForm';
+import EmployeeListPage from './components/EmployeeListPage';
 
 function App() {
   return (
-   <AuthenticationForm></AuthenticationForm>
+    <BrowserRouter>
+    <Routes>
+      <Route path="/" element={<AuthService />} />
+      <Route path="/viewcard" element={<EmployeeCard />} />
+      <Route path="/add" element={<AddEmployeeForm />} />
+      <Route path="/list" element={<EmployeeListPage />} />
+    </Routes>
+    </BrowserRouter>
   );
 }
 

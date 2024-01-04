@@ -16,14 +16,14 @@ const Main = () => {
         setInput((prevInput) => prevInput.slice(0, -1));
     };
 
-    
+
     const handleEqual = () => {
         try {
             setInput(eval(input).toString());
         } catch (error) {
             setInput('Error');
         }
-        
+
     };
     const handlePercentage = () => {
         try {
@@ -32,13 +32,23 @@ const Main = () => {
             setInput('Error');
         }
     };
+    const handlepositiveornegative = (value) => {
+        if (value === '+/-') {
+            setInput((Input) => {
+                const Value = parseFloat(Input) * -1;
+                return Value.toString();
+            });
+        } else {
+            setInput((prevInput) => prevInput + value);
+        }
+    };
 
     return (
         <div className="container text-center ">
             <div className="row">
                 <div className="col-6 col-sm-6 col-md-6 col-lg-6 col-xl-6">
                     <div className="card " m-0 p-0>
-                        <div className="card-body text-center item-center"> 
+                        <div className="card-body text-center item-center">
                             <div className="row g-3">
                                 <div className="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
                                     <input type="text" className="form-control  bg-secondary text-white" value={input} />
@@ -47,10 +57,10 @@ const Main = () => {
                                     <button className="btn btn-light  border " onClick={handleClear}>AC</button>
                                 </div>
                                 <div className="col-3 col-sm-3 col-md-3 col-lg-3 col-xl-3">
-                                    <button className="btn btn-light border  btn-block">+/-</button>
+                                    <button className="btn btn-light border" onClick={() => handlepositiveornegative('+/-')}>+/-</button>
                                 </div>
                                 <div className="col-3 col-sm-3 col-md-3 col-lg-3 col-xl-3">
-                                    <button className="btn btn-light  border" onClick={()=> handlePercentage('%')}>%</button>
+                                    <button className="btn btn-light  border" onClick={() => handlePercentage('%')}>%</button>
                                 </div>
                                 <div className="col-3 col-sm-3 col-md-3 col-lg-3 col-xl-3">
                                     <button className="btn btn-warning  border" onClick={() => handleButtonClick('/')}>/</button>
