@@ -1,0 +1,53 @@
+You are given services for
+1) fetching list of employees,
+2) fetching paged & sorted list of employees
+3) fetching details of one employee using Id,
+4) inserting a new employee
+5) editing details of an employee and
+6) deleting an employee.
+7) get number of employees
+
+Service base URL: http://ztraining.zeronetraining.local/api.publish/
+
+Get all: api/employee - Get Verb
+
+Get by id: api/employee/{employee_id} - Get Verb
+
+Get paged: api/employee/paged/{page_size}/{page_number}/{sort_field}/{sort_direction} - Get Verb
+
+Get count: api/employee/count - Get verb
+
+Insert: api/employee - Post Verb - Pass new employee data as JSON
+
+Edit: api/employee/{employee_id} - Put Verb - Pass modified details of employee as JSON
+
+Delete: api/employee/{employee_id} - Delete Verb
+
+Your first task is to print a list of employee identity cards in a page. Show 10 employees per page. Make each card attractive with photo on one side, name, gender (using some icon), designation, contact details like mobile number & email. etc. Use your imagination.
+
+Upon hovering the card for more than 5 seconds, the card should flip and show more details of the employee - postal address, city, country, date of birth etc.
+
+There should be a button at the top of the page to load a form for adding a new employee. Upon clicking that button, it should load the employee form with all fields where user can add data like First name, Lastname etc.
+
+After that, user can push a save button to save employee into database.
+
+Against each employee card in the employee list, there will be a button for editing details of that employee. Upon clicking that button, it should load details of the employee (except password) in the employee form (same as the one used for adding a new employee). Upon clicking a save button by user, modified details of the employee should overwrite details in database.
+
+Against each employee in the employee list, there will be a button for deleting that employee from database. Upon clicking it, a confirmation should be shown to user. Upon confirming deletion, it should call appropriate service and delete the employee.
+
+Before accessing any of these services, user should authenticate. For that, the user should call the service
+
+Authenticate: api/account - Post method - pass the JSON {"username":"admin","password":"Admin"}. Get the token. Store it appropriately and use this for calling all other services. There should be a button to send this JSON to service and get the token back.
+
+You can call the Get method to get details (fields) of an employee.
+
+Time: 24 Hours
+
+Evaluation Guidelines
+Test all functionality - add new, list, hovering, edit and delete.
+
+If employee is unavailable in DB upon trying to save (another user would have deleted that employee), it should give proper message. Please note that the service will through http 404 error in this case.
+
+The same should be done for fetching details of an employee (for edit) as well. Again, for delete also this should be done.
+
+Look and feel should be professional.

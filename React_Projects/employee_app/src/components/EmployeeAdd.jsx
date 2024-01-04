@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Employeenavbar from "./Employeenavbar";
 import axios from "axios";
+import authenticate from "./AuthenticationService";
 
 const EmployeeAdd = () => {
   const [inputField, setInputField] = useState({
@@ -13,18 +14,46 @@ const EmployeeAdd = () => {
     salary: "",
   });
 
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(null);
+  const [token, setToken] = useState("");
+
   const inputHandler = (event) => {
     setInputField({ ...inputField, [event.target.name]: event.target.value });
   };
 
-  const readVal = () => {
-    console.log(inputField);
-    axios
-      .post("http://172.22.2.251:4001/api/v1/packages", inputField)
-      .then((response) => {
-        alert(response.data.message);
-      });
+  const readVal = async () => {
+    try {
+      setLoading(true);
+      setError(null);
+
+      // Authenticate and get the token
+      const authData = { username: "admin", password: "Admin" };
+      const tokenResponse = await authenticate(authData);
+      setToken(tokenResponse.token);
+
+      // Add the token to the request headers
+      const headers = {
+        Authorization: `Bearer ${token}`,
+        "Content-Type": "application/json",
+      };
+
+      // Make the API call to add a new employee
+      const response = await axios.post(
+        "http://ztraining.zeronetraining.local/api.publish/api/employee",
+        inputField,
+        { headers }
+      );
+
+      alert(response.data.message);
+    } catch (error) {
+      console.error("Employee registration has failed:", error.message);
+      setError("Employee registration has failed");
+    } finally {
+      setLoading(false);
+    }
   };
+
   return (
     <div>
       <Employeenavbar />
@@ -58,7 +87,7 @@ const EmployeeAdd = () => {
               </div>
               <div className="col col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xxl-6">
                 <label htmlFor="" className="form-label">
-                  phone
+                  Phone
                 </label>
                 <input
                   type="number"
@@ -70,7 +99,7 @@ const EmployeeAdd = () => {
               </div>
               <div className="col col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xxl-6">
                 <label htmlFor="" className="form-label">
-                  email
+                  Email
                 </label>
                 <input
                   type="email"
@@ -97,7 +126,7 @@ const EmployeeAdd = () => {
                   Designation
                 </label>
                 <input
-                  type=""
+                  type="text"
                   className="form-control"
                   name="designation"
                   value={inputField.designation}
@@ -109,7 +138,7 @@ const EmployeeAdd = () => {
                   Salary
                 </label>
                 <input
-                  type=""
+                  type="text"
                   className="form-control"
                   name="salary"
                   value={inputField.salary}
@@ -119,12 +148,14 @@ const EmployeeAdd = () => {
               <div className="col col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
                 <button
                   onClick={readVal}
-                  type="submit"
+                  type="button"
                   className="btn btn-primary"
+                  disabled={loading}
                 >
-                  REGISTER
+                  {loading ? "REGISTERING..." : "REGISTER"}
                 </button>
               </div>
+              {error && <div className="text-danger mt-3">{error}</div>}
             </div>
           </div>
         </div>
