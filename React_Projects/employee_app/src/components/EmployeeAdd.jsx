@@ -1,115 +1,172 @@
 import React, { useState } from "react";
 import Employeenavbar from "./Employeenavbar";
 import axios from "axios";
-import authenticate from "./AuthenticationService";
 
 const EmployeeAdd = () => {
   const [inputField, setInputField] = useState({
-    first_name: "",
-    last_name: "",
-    email: "",
-    phone: "",
-    organization: "",
+    employeeID: "",
+    firstName: "",
+    lastName: "",
+    dateOfBirth: "",
+    personalEmail: "",
+    mobileNumber: "",
+    postalAddress: "",
+    gender: "",
+    country: "",
+    city: "",
     designation: "",
-    salary: "",
+    basicPay: "",
+    needTransportation: "",
+    notes: "",
+    username: "",
+    password: "",
   });
 
-  const [loading, setLoading] = useState(false);
-  const [error, setError] = useState(null);
-  const [token, setToken] = useState("eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJJZCI6IjVmN2JlMDg3LWY1OGUtNDA0MS04MjZjLTgyZWIzMTliZTIyOSIsImh0dHA6Ly9zY2hlbWFzLnhtbHNvYXAub3JnL3dzLzIwMDUvMDUvaWRlbnRpdHkvY2xhaW1zL25hbWUiOiJBZG1pbiIsImh0dHA6Ly9zY2hlbWFzLnhtbHNvYXAub3JnL3dzLzIwMDUvMDUvaWRlbnRpdHkvY2xhaW1zL2VtYWlsYWRkcmVzcyI6ImFkbWluYWtwQGdtYWlsLmNvbSIsImh0dHA6Ly9zY2hlbWFzLnhtbHNvYXAub3JnL3dzLzIwMDUvMDUvaWRlbnRpdHkvY2xhaW1zL25hbWVpZGVudGlmaWVyIjoiYzhkNzkyMDMtODFjYy00ODJhLThmMzctMTVmNjJjYjIzNzJiIiwiaHR0cDovL3NjaGVtYXMubWljcm9zb2Z0LmNvbS93cy8yMDA4LzA2L2lkZW50aXR5L2NsYWltcy9leHBpcmF0aW9uIjoiSmFuIFNhdCAwNiAyMDI0IDA0OjU3OjQ4IEFNIiwibmJmIjoxNzA0NDMwNjY4LCJleHAiOjE3MDQ0OTcyNjgsImlzcyI6Imh0dHBzOi8vbG9jYWxob3N0OjcxNzAiLCJhdWQiOiJodHRwOi8vbG9jYWxob3N0OjcxNzAifQ.ty83qy-fkjfxC9zr9xh2UoAWClnGASVCYQH6ZwmbXxk");
-
   const inputHandler = (event) => {
-    setInputField({ ...inputField, [event.target.name]: event.target.value });
+    const value = event.target.type === 'checkbox' ? event.target.checked : event.target.value;
+
+    setInputField({ ...inputField, [event.target.name]: value });
+
+  };
+
+  const getNewToken = async () => {
+    try {
+      const response = await axios.post(
+        "http://ztraining.zeronetraining.local/api.publish/api/account",
+        {
+          username: "admin",
+          password: "Admin",
+        }
+      );
+
+      const newToken = response.data.token;
+
+      return newToken;
+    } catch (error) {
+      console.error("Error while getting a new token:", error);
+      throw error;
+    }
   };
 
   const readVal = async () => {
     try {
-      setLoading(true);
-      setError(null);
-  
-      const authData = { username: "admin", password: "Admin" };
-      const tokenResponse = await authenticate(authData);
-  
-      const headers = {
-        Authorization: `Bearer ${tokenResponse.token}`,
-        "Content-Type": "application/json",
-      };
-  
-      const response = await axios.post("http://ztraining.zeronetraining.local/api.publish/api/employee", inputField, { headers });
-  
+      const newToken = await getNewToken();
+
+      console.log("Sending data to server:", inputField);
+
+      const response = await axios.post(
+        "http://ztraining.zeronetraining.local/api.publish/api/employee",
+        inputField,
+        {
+          headers: {
+            Authorization: `Bearer ${newToken}`,
+          },
+        }
+      );
+
+      console.log("Server response:", response.data);
+
       alert(response.data.message);
     } catch (error) {
-      console.error("Employee registration has failed:", error.message);
-      setError("Employee registration failed. Please try again.");
-    } finally {
-      setLoading(false);
+      if (error.response) {
+        console.error("Server responded with an error:", error.response.data);
+        console.error("Status code:", error.response.status);
+      } else if (error.request) {
+        console.error("No response received from the server:", error.request);
+      } else {
+        console.error("Error setting up the request:", error.message);
+      }
     }
   };
-  
+
 
   return (
     <div>
       <Employeenavbar />
       <div className="container">
-        <div className="row">
-          <div className="col">
-            <div className="row g-3">
-              <div className="col col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xxl-6">
-                <label htmlFor="" className="form-label">
-                  First Name
-                </label>
-                <input type="text"  className="form-control" name="first_name"  value={inputField.first_name}  onChange={inputHandler}
-                />
+        <form action="">
+          <div className="row">
+            <div className="col">
+              <div className="row g-3">
+                <div className="col col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xxl-6">
+                  <label htmlFor="" className="form-label">Employee ID</label>
+                  <input type="text" className="form-control" name="employeeID" value={inputField.employeeID} onChange={inputHandler} />
+                </div>
+                <div className="col col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xxl-6">
+                  <label htmlFor="" className="form-label">First Name</label>
+                  <input type="text" className="form-control" name="firstName" value={inputField.firstName} onChange={inputHandler} />
+                </div>
+                <div className="col col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xxl-6">
+                  <label htmlFor="" className="form-label">Last Name</label>
+                  <input type="text" className="form-control" name="lastName" value={inputField.lastName} onChange={inputHandler} />
+                </div>
+                <div className="col col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xxl-6">
+                  <label htmlFor="" className="form-label">Date of Birth</label>
+                  <input type="date" className="form-control" name="dateOfBirth" value={inputField.dateOfBirth} onChange={inputHandler} />
+                </div>
+                <div className="col col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xxl-6">
+                  <label htmlFor="" className="form-label">Personal Email</label>
+                  <input type="email" className="form-control" name="personalEmail" value={inputField.personalEmail} onChange={inputHandler} />
+                </div>
+                <div className="col col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xxl-6">
+                  <label htmlFor="" className="form-label">Mobile Number</label>
+                  <input type="text" className="form-control" name="mobileNumber" value={inputField.mobileNumber} onChange={inputHandler} />
+                </div>
+                <div className="col col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xxl-6">
+                  <label htmlFor="" className="form-label">Postal Address</label>
+                  <input type="text" className="form-control" name="postalAddress" value={inputField.postalAddress} onChange={inputHandler} />
+                </div>
+                <div className="col col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xxl-6">
+                  <label htmlFor="" className="form-label">Gender</label>
+                  <select className="form-select" name="gender" value={inputField.gender} onChange={inputHandler}>
+                    <option value="">Select Gender</option>
+                    <option value="0">0-Male</option>
+                    <option value="1">1-Female</option>
+                  </select>
+                </div>
+                <div className="col col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xxl-6">
+                  <label htmlFor="" className="form-label">Country</label>
+                  <input type="text" className="form-control" name="country" value={inputField.country} onChange={inputHandler} />
+                </div>
+                <div className="col col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xxl-6">
+                  <label htmlFor="" className="form-label">City</label>
+                  <input type="text" className="form-control" name="city" value={inputField.city} onChange={inputHandler} />
+                </div>
+                <div className="col col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xxl-6">
+                  <label htmlFor="" className="form-label">Designation</label>
+                  <input type="number" className="form-control" name="designation" value={inputField.designation} onChange={inputHandler} />
+                </div>
+                <div className="col col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xxl-6">
+                  <label htmlFor="" className="form-label">Basic Pay</label>
+                  <input type="number" className="form-control" name="basicPay" value={inputField.basicPay} onChange={inputHandler} />
+                </div>
+                <div className="col col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xxl-6">
+                  <label htmlFor="" className="form-label">Need Transportation</label>
+                  <div className="form-check">
+                    <input type="checkbox" className="form-check-input" name="needTransportation" checked={inputField.needTransportation} onChange={() => setInputField({ ...inputField, needTransportation: !inputField.needTransportation })} />
+                    <label className="form-check-label" htmlFor="needTransportation">Yes</label>
+                  </div>
+                </div>
+
+                <div className="col col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xxl-6">
+                  <label htmlFor="" className="form-label">Notes</label>
+                  <textarea className="form-control" name="notes" value={inputField.notes} onChange={inputHandler}></textarea>
+                </div>
+                <div className="col col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xxl-6">
+                  <label htmlFor="" className="form-label">Username</label>
+                  <input type="text" className="form-control" name="username" value={inputField.username} onChange={inputHandler} autoComplete="current-username" />
+                </div>
+                <div className="col col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xxl-6">
+                  <label htmlFor="" className="form-label">Password</label>
+                  <input type="password" className="form-control" name="password" value={inputField.password} onChange={inputHandler} autoComplete="current-password" />
+                </div>
+                <div className="col col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
+                  <button onClick={readVal} type="button" className="btn btn-primary">REGISTER</button>
+                </div>
               </div>
-              <div className="col col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xxl-6">
-                <label htmlFor="" className="form-label">
-                  Last Name
-                </label>
-                <input type="text"  className="form-control" name="last_name" value={inputField.last_name} onChange={inputHandler}/>
-              </div>
-              <div className="col col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xxl-6">
-                <label htmlFor="" className="form-label">
-                  Phone
-                </label>
-                <input type="number"  className="form-control" name="phone" value={inputField.phone} onChange={inputHandler}/>
-              </div>
-              <div className="col col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xxl-6">
-                <label htmlFor="" className="form-label">
-                  Email
-                </label>
-                <input type="email" className="form-control" name="email" value={inputField.email} onChange={inputHandler}
-                />
-              </div>
-              <div className="col col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xxl-6">
-                <label htmlFor="" className="form-label">
-                  Organisation
-                </label>
-                <input type="text" className="form-control" name="organization" value={inputField.organization} onChange={inputHandler}
-                />
-              </div>
-              <div className="col col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xxl-6">
-                <label htmlFor="" className="form-label">
-                  Designation
-                </label>
-                <input type="text"  className="form-control" name="designation" value={inputField.designation} onChange={inputHandler}
-                />
-              </div>
-              <div className="col col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xxl-6">
-                <label htmlFor="" className="form-label">
-                  Salary
-                </label>
-                <input type="text" className="form-control" name="salary" value={inputField.salary} onChange={inputHandler}
-                />
-              </div>
-              <div className="col col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
-                <button onClick={readVal} type="button" className="btn btn-primary" disabled={loading}>
-                  {loading ? "REGISTERING..." : "REGISTER"}
-                </button>
-              </div>
-              {error && <div className="text-danger mt-3">{error}</div>}
             </div>
           </div>
-        </div>
+        </form>
       </div>
     </div>
   );

@@ -24,7 +24,7 @@ const Employeenavbar = () => {
             <ul className="navbar-nav me-auto mb-2 mb-lg-0">
               <li className="nav-item">
                 <Link className="nav-link active" aria-current="page" to="/">
-                  Login
+                  ViewAll
                 </Link>
               </li>
               <li className="nav-item">
@@ -38,10 +38,11 @@ const Employeenavbar = () => {
                 </Link>
               </li>
               <li className="nav-item">
-                <Link className="nav-link" to="/view">
-                  View All
+                <Link className="nav-link" to="/list">
+                  List
                 </Link>
               </li>
+          
             </ul>
           </div>
         </div>
