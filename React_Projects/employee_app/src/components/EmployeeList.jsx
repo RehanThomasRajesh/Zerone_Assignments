@@ -20,7 +20,7 @@ const EmployeeList = () => {
         try {
           const newToken = await getNewToken();
           const response = await axios.get(
-            `http://ztraining.zeronetraining.local/api.publish/api/employee/paged/${pageSize}/${currentPage}/firstName/asc`,
+            `http://ztraining.zeronetraining.local/api.publish/api/employee/paged/${pageSize}/${currentPage}/employeeID/asc`,
             {
               headers: {
                 Authorization: `Bearer ${newToken}`,

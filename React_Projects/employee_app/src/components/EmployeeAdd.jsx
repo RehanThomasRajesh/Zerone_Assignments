@@ -4,7 +4,7 @@ import axios from "axios";
 
 const EmployeeAdd = () => {
   const [inputField, setInputField] = useState({
-    employeeID: "",
+    employeeID: 0,
     firstName: "",
     lastName: "",
     dateOfBirth: "",
@@ -23,10 +23,14 @@ const EmployeeAdd = () => {
   });
 
   const inputHandler = (event) => {
-    const value = event.target.type === 'checkbox' ? event.target.checked : event.target.value;
-
-    setInputField({ ...inputField, [event.target.name]: value });
-
+    const value =
+      event.target.type === 'checkbox' ? event.target.checked : event.target.value;
+  
+    setInputField({
+      ...inputField,
+      [event.target.name]:
+        event.target.type === 'checkbox' ? event.target.checked : value,
+    });
   };
 
   const getNewToken = async () => {
@@ -87,10 +91,7 @@ const EmployeeAdd = () => {
           <div className="row g-3">
             <div className="col">
               <div className="row g-3">
-                <div className="col col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xxl-6">
-                  <label htmlFor="" className="form-label">Employee ID</label>
-                  <input type="text" className="form-control" name="employeeID" value={inputField.employeeID} onChange={inputHandler} />
-                </div>
+               
                 <div className="col col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xxl-6">
                   <label htmlFor="" className="form-label">First Name</label>
                   <input type="text" className="form-control" name="firstName" value={inputField.firstName} onChange={inputHandler} />
