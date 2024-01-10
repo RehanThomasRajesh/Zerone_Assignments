@@ -64,14 +64,7 @@ const EmployeeView = () => {
   };
 
   const handleCardClick = (index) => {
-    // Clear any existing timeout
     clearTimeout(flipTimeout);
-
-    // Set a new timeout to flip the card after 5 seconds
-    flipTimeout = setTimeout(() => {
-      setFlipIndex(index);
-      resetTransitionDelay();
-    }, 5000); // 5000 milliseconds = 5 seconds
   };
 
   const handleCardLeave = () => {
@@ -82,7 +75,6 @@ const EmployeeView = () => {
   let flipTimeout;
 
   const resetTransitionDelay = () => {
-    // Reset the transition delay when leaving the card
     document.querySelectorAll('.card').forEach((card) => {
       card.style.transitionDelay = '0s';
     });
@@ -105,9 +97,8 @@ const EmployeeView = () => {
                   <div className="card-front card-body">
                     <img src="https://th.bing.com/th/id/OIP.PMhANanxddOBObcYxcYOcwHaGy?rs=1&pid=ImgDetMain" alt="Profile" className="profile-pic" />
                     <h5 className="card-title">{value.firstName} {value.lastName}</h5>
-                    <p className="card-text">Email: {value.email}</p>
-                    <p className="card-text">Phone: {value.phone}</p>
-                    <p className="card-text">Organization: {value.organization}</p>
+                    <p className="card-text">Email: {value.personalEmail}</p>
+                    <p className="card-text">Country: {value.country}</p>
                     <p className="card-text">Designation: {value.designation}</p>
                     <p className="card-text">Date of Birth: {value.dateOfBirth}</p>
                     <p className="card-text">Personal Email: {value.personalEmail}</p>

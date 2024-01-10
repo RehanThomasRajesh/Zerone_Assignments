@@ -1,19 +1,16 @@
-// EmployeeList.jsx
 
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import Employeenavbar from "./Employeenavbar";
-import CustomModal from "./CustomModal"; // Import the CustomModal component
+import CustomModal from "./CustomModal"; 
 
 const EmployeeList = () => {
     const [employees, setEmployees] = useState([]);
-    const [selectedEmployee, setSelectedEmployee] = useState(null);
-    const [showEditModal, setShowEditModal] = useState(false); // State for the edit modal
+    const [showEditModal, setShowEditModal] = useState(false); 
     const [editedEmployee, setEditedEmployee] = useState(null);
-    const [currentPage, setCurrentPage] = useState(1); // Track current page
-    const [pageSize, setPageSize] = useState(5); // Specify page size
-    const [sortField, setSortField] = useState("firstName"); // Specify sort field
-    const [sortOrder, setSortOrder] = useState("asc"); // Specify sort order
+    const [currentPage, setCurrentPage] = useState(1); 
+    const [pageSize, setPageSize] = useState(5);
+    const [sortOrder, setSortOrder] = useState("asc"); 
 
     useEffect(() => {
         fetchData();
@@ -33,10 +30,8 @@ const EmployeeList = () => {
     
           setEmployees(response.data);
     
-          // If the length of the data received is less than the page size,
-          // there are no more pages.
+         
           if (response.data.length < pageSize) {
-            // Optionally, you can disable the "Next" button here.
           }
         } catch (error) {
           console.error("Error fetching employee data:", error);
@@ -95,6 +90,11 @@ const EmployeeList = () => {
 
     const handleDeleteClick = async (employeeId) => {
         try {
+            const shouldDelete = window.confirm("Are you sure you want to delete this employee?");
+            if (!shouldDelete) {
+                return;
+            }
+
             const newToken = await getNewToken();
             await axios.delete(
                 `http://ztraining.zeronetraining.local/api.publish/api/employee/${employeeId}`,
@@ -123,7 +123,6 @@ const EmployeeList = () => {
         <div>
         <Employeenavbar></Employeenavbar>
         <div className="container mt-5">
-          {/* Pagination controls */}
           <div className="pagination">
             <button
               onClick={() => setCurrentPage((prevPage) => Math.max(prevPage - 1, 1))}
@@ -174,7 +173,6 @@ const EmployeeList = () => {
                 </table>
             </div>
 
-            {/* Edit Modal */}
             <CustomModal
                 isOpen={showEditModal}
                 onClose={handleEditCancel}
@@ -201,7 +199,13 @@ const EmployeeList = () => {
                     onChange={(e) => handleInputChange("personalEmail", e.target.value)}
                 />
                 <br />
-                {/* Add more fields as needed */}
+                <label>Country:</label>
+                <input
+                    type="text"
+                    value={editedEmployee?.country || ""}
+                    onChange={(e) => handleInputChange("country", e.target.value)}
+                />
+                <br />
                 <button onClick={handleEditSave}>Save</button>
                 <button onClick={handleEditCancel}>Cancel</button>
             </CustomModal>
