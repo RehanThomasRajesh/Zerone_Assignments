@@ -51,9 +51,9 @@ const EmployeeAdd = () => {
   const readVal = async () => {
     try {
       const newToken = await getNewToken();
-
+  
       console.log("Sending data to server:", inputField);
-
+  
       const response = await axios.post(
         "http://ztraining.zeronetraining.local/api.publish/api/employee",
         inputField,
@@ -63,21 +63,20 @@ const EmployeeAdd = () => {
           },
         }
       );
-
-      console.log("Server response:", response.data);
-
-      alert(response.data.message);
-    } catch (error) {
-      if (error.response) {
-        console.error("Server responded with an error:", error.response.data);
-        console.error("Status code:", error.response.status);
-      } else if (error.request) {
-        console.error("No response received from the server:", error.request);
+  
+      console.log("Server response:", response);
+  
+      if (response.data && response.data.success) {
+        alert("Successfully registered");
       } else {
-        console.error("Error setting up the request:", error.message);
+        console.error("Unexpected server response:", response);
+        alert("Successfully registered, but issues presists pls check console");
       }
+    } catch (error) {
+      console.error("Error during registration:", error);
     }
   };
+  
 
 
   return (
@@ -120,8 +119,8 @@ const EmployeeAdd = () => {
                   <label htmlFor="" className="form-label">Gender</label>
                   <select className="form-select" name="gender" value={inputField.gender} onChange={inputHandler}>
                     <option value="">Select Gender</option>
-                    <option value="0">0-Male</option>
-                    <option value="1">1-Female</option>
+                    <option value="0">Male</option>
+                    <option value="1">Female</option>
                   </select>
                 </div>
                 <div className="col col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xxl-6">
