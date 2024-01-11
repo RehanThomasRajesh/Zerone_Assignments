@@ -1,0 +1,35 @@
+[{
+  "_id": {
+    "$oid": "659f8788d0cffa14ab5a36cb"
+  },
+  "Code": "USD",
+  "Symbol": "$"
+},
+{
+  "_id": {
+    "$oid": "659f9017d0cffa14ab5a36cc"
+  },
+  "Code": "INR",
+  "Symbol": "Rs."
+},
+{
+  "_id": {
+    "$oid": "659f9017d0cffa14ab5a36cd"
+  },
+  "Code": "AUD",
+  "Symbol": "AUD"
+},
+{
+  "_id": {
+    "$oid": "659f9017d0cffa14ab5a36ce"
+  },
+  "Code": "Euro",
+  "Symbol": "Euro"
+},
+{
+  "_id": {
+    "$oid": "659f9017d0cffa14ab5a36cf"
+  },
+  "Code": "GBP",
+  "Symbol": "GBP"
+}]

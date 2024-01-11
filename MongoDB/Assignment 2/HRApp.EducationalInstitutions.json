@@ -1,0 +1,63 @@
+[{
+  "_id": {
+    "$oid": "659f972fd0cffa14ab5a36dd"
+  },
+  "Name": "IIT Mumbai",
+  "Code": "IITM"
+},
+{
+  "_id": {
+    "$oid": "659f972fd0cffa14ab5a36de"
+  },
+  "Name": "IIT Kharagpur",
+  "Code": "IITKh"
+},
+{
+  "_id": {
+    "$oid": "659f972fd0cffa14ab5a36df"
+  },
+  "Name": "IIT Kanpur",
+  "Code": "IITK"
+},
+{
+  "_id": {
+    "$oid": "659f972fd0cffa14ab5a36e0"
+  },
+  "Name": "IIT Chennai",
+  "Code": "IITC"
+},
+{
+  "_id": {
+    "$oid": "659f972fd0cffa14ab5a36e1"
+  },
+  "Name": "NIT Kozhikkode",
+  "Code": "NITC"
+},
+{
+  "_id": {
+    "$oid": "659f972fd0cffa14ab5a36e2"
+  },
+  "Name": "NIT Surathkal",
+  "Code": "NITS"
+},
+{
+  "_id": {
+    "$oid": "659f972fd0cffa14ab5a36e3"
+  },
+  "Name": "College of Engineering, Thrissur",
+  "Code": "CETSR"
+},
+{
+  "_id": {
+    "$oid": "659f972fd0cffa14ab5a36e4"
+  },
+  "Name": "CBSE",
+  "Code": "CBSE"
+},
+{
+  "_id": {
+    "$oid": "659f972fd0cffa14ab5a36e5"
+  },
+  "Name": "Kerala State Board",
+  "Code": "KSB"
+}]

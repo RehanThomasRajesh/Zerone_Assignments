@@ -1,0 +1,28 @@
+[{
+  "_id": {
+    "$oid": "659f9af9d0cffa14ab5a36f0"
+  },
+  "Name": "Infosys Ltd.",
+  "Code": "Infosys"
+},
+{
+  "_id": {
+    "$oid": "659f9af9d0cffa14ab5a36f1"
+  },
+  "Name": "TCS Ltd.",
+  "Code": "TCS"
+},
+{
+  "_id": {
+    "$oid": "659f9af9d0cffa14ab5a36f2"
+  },
+  "Name": "HCLTech Ltd.",
+  "Code": "HCLTech"
+},
+{
+  "_id": {
+    "$oid": "659f9af9d0cffa14ab5a36f3"
+  },
+  "Name": "Polaris Ltd.",
+  "Code": "Polaris"
+}]

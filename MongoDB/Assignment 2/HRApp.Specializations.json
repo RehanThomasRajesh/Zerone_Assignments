@@ -1,0 +1,30 @@
+[{
+  "_id": {
+    "$oid": "659f9856d0cffa14ab5a36eb"
+  },
+  "Specialization": "Computer Science"
+},
+{
+  "_id": {
+    "$oid": "659f9856d0cffa14ab5a36ec"
+  },
+  "Specialization": "Mechanical Engineering"
+},
+{
+  "_id": {
+    "$oid": "659f9856d0cffa14ab5a36ed"
+  },
+  "Specialization": "Computer Engineering"
+},
+{
+  "_id": {
+    "$oid": "659f9856d0cffa14ab5a36ee"
+  },
+  "Specialization": "Electrical Engineering"
+},
+{
+  "_id": {
+    "$oid": "659f9856d0cffa14ab5a36ef"
+  },
+  "Specialization": "Mathematics, Physics, Chemistry"
+}]

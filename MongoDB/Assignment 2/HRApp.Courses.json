@@ -1,0 +1,30 @@
+[{
+  "_id": {
+    "$oid": "659f97c4d0cffa14ab5a36e6"
+  },
+  "Name": "B.Tech."
+},
+{
+  "_id": {
+    "$oid": "659f97c4d0cffa14ab5a36e7"
+  },
+  "Name": "BE"
+},
+{
+  "_id": {
+    "$oid": "659f97c4d0cffa14ab5a36e8"
+  },
+  "Name": "MCA"
+},
+{
+  "_id": {
+    "$oid": "659f97c4d0cffa14ab5a36e9"
+  },
+  "Name": "MBA"
+},
+{
+  "_id": {
+    "$oid": "659f97c4d0cffa14ab5a36ea"
+  },
+  "Name": "12th"
+}]

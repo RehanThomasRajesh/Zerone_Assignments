@@ -1,0 +1,40 @@
+[{
+  "_id": {
+    "$oid": "659f9233d0cffa14ab5a36d0"
+  },
+  "Code": "US",
+  "Name": "United States",
+  "Currency": {
+    "$oid": "659f8788d0cffa14ab5a36cb"
+  }
+},
+{
+  "_id": {
+    "$oid": "659f945fd0cffa14ab5a36d1"
+  },
+  "Code": "IN",
+  "Name": "India",
+  "Currency": {
+    "$oid": "659f9017d0cffa14ab5a36cc"
+  }
+},
+{
+  "_id": {
+    "$oid": "659f945fd0cffa14ab5a36d2"
+  },
+  "Code": "AU",
+  "Name": "Australia",
+  "Currency": {
+    "$oid": "659f9017d0cffa14ab5a36cd"
+  }
+},
+{
+  "_id": {
+    "$oid": "659f945fd0cffa14ab5a36d3"
+  },
+  "Code": "FR",
+  "Name": "France",
+  "Currency": {
+    "$oid": "659f9017d0cffa14ab5a36ce"
+  }
+}]

@@ -1,0 +1,126 @@
+use HRApp
+switched to db HRApp
+db.Currencies.insertOne({"Code": "USD",
+  "Symbol": "$"})
+{
+  acknowledged: true,
+  insertedId: ObjectId('659f8788d0cffa14ab5a36cb')
+}
+db.Currencies.insertMany([{ "Code": "INR",
+  "Symbol": "Rs."},{"Code": "AUD",
+  "Symbol": "AUD"},{"Code": "Euro",
+  "Symbol": "Euro"},{ "Code": "GBP",
+  "Symbol": "GBP"}])
+{
+  acknowledged: true,
+  insertedIds: {
+    '0': ObjectId('659f9017d0cffa14ab5a36cc'),
+    '1': ObjectId('659f9017d0cffa14ab5a36cd'),
+    '2': ObjectId('659f9017d0cffa14ab5a36ce'),
+    '3': ObjectId('659f9017d0cffa14ab5a36cf')
+  }
+}
+db.createCollection("Countries")
+{ ok: 1 }
+db.Countries.insertOne({"Code": "US",
+  "Name": "United States","Currency":db.Currencies.findOne({"Code":"USD"})._id})
+{
+  acknowledged: true,
+  insertedId: ObjectId('659f9233d0cffa14ab5a36d0')
+}
+db.Countries.insertMany([{ "Code": "IN",
+  "Name": "India","Currency":db.Currencies.findOne({"Code":"INR"})._id},{"Code": "AU",
+  "Name": "Australia","Currency":db.Currencies.findOne({"Code":"AUD"})._id},{ "Code": "FR",
+  "Name": "France","Currency":db.Currencies.findOne({"Code":"Euro"})._id}])
+{
+  acknowledged: true,
+  insertedIds: {
+    '0': ObjectId('659f945fd0cffa14ab5a36d1'),
+    '1': ObjectId('659f945fd0cffa14ab5a36d2'),
+    '2': ObjectId('659f945fd0cffa14ab5a36d3')
+  }
+}
+db.createCollection("Designations")
+{ ok: 1 }
+db.Designations.insertMany([{ "Name": "Software Engineer"},{ "Name": "Senior Software Engineer"},{"Name": "Team Leader"},{"Name": "Software Tester"},{"Name": "Senior Software Tester"
+},{"Name": "Test Lead"},{"Name": "Project Leader"},{  "Name": "Project Manager"
+},{  "Name": "Vice President"
+}])
+{
+  acknowledged: true,
+  insertedIds: {
+    '0': ObjectId('659f9585d0cffa14ab5a36d4'),
+    '1': ObjectId('659f9585d0cffa14ab5a36d5'),
+    '2': ObjectId('659f9585d0cffa14ab5a36d6'),
+    '3': ObjectId('659f9585d0cffa14ab5a36d7'),
+    '4': ObjectId('659f9585d0cffa14ab5a36d8'),
+    '5': ObjectId('659f9585d0cffa14ab5a36d9'),
+    '6': ObjectId('659f9585d0cffa14ab5a36da'),
+    '7': ObjectId('659f9585d0cffa14ab5a36db'),
+    '8': ObjectId('659f9585d0cffa14ab5a36dc')
+  }
+}
+db.createCollection("EducationalInstitutions")
+{ ok: 1 }
+db.EducationalInstitutions.insertMany([{ "Name": "IIT Mumbai",
+  "Code": "IITM"},{ "Name": "IIT Kharagpur",
+  "Code": "IITKh"},{ "Name": "IIT Kanpur",
+  "Code": "IITK"},{"Name": "IIT Chennai",
+  "Code": "IITC"},{ "Name": "NIT Kozhikkode",
+  "Code": "NITC"},{ "Name": "NIT Surathkal",
+  "Code": "NITS"},{ "Name": "College of Engineering, Thrissur",
+  "Code": "CETSR"},{ "Name": "CBSE",
+  "Code": "CBSE"},{ "Name": "Kerala State Board",
+  "Code": "KSB"}])
+{
+  acknowledged: true,
+  insertedIds: {
+    '0': ObjectId('659f972fd0cffa14ab5a36dd'),
+    '1': ObjectId('659f972fd0cffa14ab5a36de'),
+    '2': ObjectId('659f972fd0cffa14ab5a36df'),
+    '3': ObjectId('659f972fd0cffa14ab5a36e0'),
+    '4': ObjectId('659f972fd0cffa14ab5a36e1'),
+    '5': ObjectId('659f972fd0cffa14ab5a36e2'),
+    '6': ObjectId('659f972fd0cffa14ab5a36e3'),
+    '7': ObjectId('659f972fd0cffa14ab5a36e4'),
+    '8': ObjectId('659f972fd0cffa14ab5a36e5')
+  }
+}
+db.createCollection("Courses")
+{ ok: 1 }
+db.Courses.insertMany([{"Name": "B.Tech."
+},{  "Name": "BE"},{"Name": "MCA"},{"Name": "MBA"},{"Name": "12th"}])
+{
+  acknowledged: true,
+  insertedIds: {
+    '0': ObjectId('659f97c4d0cffa14ab5a36e6'),
+    '1': ObjectId('659f97c4d0cffa14ab5a36e7'),
+    '2': ObjectId('659f97c4d0cffa14ab5a36e8'),
+    '3': ObjectId('659f97c4d0cffa14ab5a36e9'),
+    '4': ObjectId('659f97c4d0cffa14ab5a36ea')
+  }
+}
+db.createCollection("Specializations")
+{ ok: 1 }
+db.Specializations.insertMany([{"Specialization": "Computer Science"},{  "Specialization": "Mechanical Engineering"
+},{  "Specialization": "Computer Engineering"
+},{  "Specialization": "Electrical Engineering"
+},{  "Specialization": "Mathematics, Physics, Chemistry"
+}])
+{
+  acknowledged: true,
+  insertedIds: {
+    '0': ObjectId('659f9856d0cffa14ab5a36eb'),
+    '1': ObjectId('659f9856d0cffa14ab5a36ec'),
+    '2': ObjectId('659f9856d0cffa14ab5a36ed'),
+    '3': ObjectId('659f9856d0cffa14ab5a36ee'),
+    '4': ObjectId('659f9856d0cffa14ab5a36ef')
+  }
+}
+db.createCollection("Companies")
+{ ok: 1 }
+db.Companies.insertMany([{"Name": "Infosys Ltd.",
+  "Code": "Infosys"},{ "Name": "TCS Ltd.",
+  "Code": "TCS"},{"Name": "HCLTech Ltd.",
+  "Code": "HCLTech"},{"Name": "Polaris Ltd.",
+  "Code": "Polaris"}])
