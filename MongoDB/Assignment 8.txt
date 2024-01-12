@@ -1,0 +1,7 @@
+db.employees.aggregate([
+  {
+    $match: {
+      "Country.$id": { $in: [ObjectId('659f9233d0cffa14ab5a36d0'), ObjectId('659f945fd0cffa14ab5a36d1')] }
+    }
+  }
+])

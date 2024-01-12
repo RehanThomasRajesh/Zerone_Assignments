@@ -1,0 +1,8 @@
+db.employees.aggregate([
+  {
+    $match: {
+      "BasicPay": { $gt: 25000 },
+      "Country.$id": ObjectId("659f945fd0cffa14ab5a36d1")
+    }
+  }
+])
