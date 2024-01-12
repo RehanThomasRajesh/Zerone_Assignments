@@ -1,0 +1,20 @@
+db.Countries.aggregate([
+  {
+    $lookup: {
+      from: "Currencies",
+      localField: "Currency",
+      foreignField: "_id",
+      as: "CurrencyInfo"
+    }
+  },
+  {
+    $unwind: "$CurrencyInfo"
+  },
+  {
+    $project: {
+      "Code": 1,
+      "Name": 1,
+      "CurrencyCode": "$CurrencyInfo.Code"
+    }
+  }
+])
