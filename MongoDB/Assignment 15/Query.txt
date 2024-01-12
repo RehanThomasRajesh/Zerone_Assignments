@@ -1,0 +1,3 @@
+db.employees.find({
+  "WorkExperience.Company.$id": ObjectId("659f9af9d0cffa14ab5a36f0")
+})

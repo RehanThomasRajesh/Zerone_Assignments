@@ -1,0 +1,8 @@
+db.employees.find({
+  $expr: {
+    $and: [
+      { $gte: [{ $sum: "$WorkExperience.DurationMonths" }, 36] },
+      { $lte: [{ $sum: "$WorkExperience.DurationMonths" }, 60] }
+    ]
+  }
+})
