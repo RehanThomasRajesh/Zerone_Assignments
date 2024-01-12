@@ -1,0 +1,18 @@
+db.employees.aggregate([
+  {
+    $unwind: "$Designation"
+  },
+  {
+    $group: {
+      _id: "$Designation",
+      count: { $sum: 1 }
+    }
+  },
+  {
+    $project: {
+      Country: "$_id",
+      EmployeeCount: "$count",
+      _id: 0
+    }
+  }
+])

@@ -1,0 +1,7 @@
+db.employees.find({
+  "WorkExperience": {
+    $elemMatch: {
+      "DurationMonths": { $lt: 24 }
+    }
+  }
+})

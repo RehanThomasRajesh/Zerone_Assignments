@@ -80,7 +80,8 @@
         }
       },
       "LastDesignation": "Senior Software Engineer",
-      "DurationMonths": 60
+      "DurationMonths": 60,
+      "Remarks": "NA"
     },
     {
       "Company": {
@@ -90,7 +91,8 @@
         }
       },
       "LastDesignation": "Project Manager",
-      "DurationMonths": 36
+      "DurationMonths": 36,
+      "Remarks": "NA"
     }
   ]
 },
@@ -176,7 +178,8 @@
         }
       },
       "LastDesignation": "Software Tester",
-      "DurationMonths": 48
+      "DurationMonths": 48,
+      "Remarks": ""
     },
     {
       "Company": {
@@ -186,7 +189,8 @@
         }
       },
       "LastDesignation": "Senior Software Tester",
-      "DurationMonths": 36
+      "DurationMonths": 36,
+      "Remarks": "NA"
     }
   ]
 },
@@ -272,7 +276,8 @@
         }
       },
       "LastDesignation": "Project Leader",
-      "DurationMonths": 36
+      "DurationMonths": 36,
+      "Remarks": ""
     },
     {
       "Company": {
@@ -282,7 +287,8 @@
         }
       },
       "LastDesignation": "Vice President",
-      "DurationMonths": 24
+      "DurationMonths": 24,
+      "Remarks": ""
     }
   ]
 },
@@ -368,7 +374,8 @@
         }
       },
       "LastDesignation": "Software Tester",
-      "DurationMonths": 48
+      "DurationMonths": 48,
+      "Remarks": "NA"
     },
     {
       "Company": {
@@ -378,7 +385,8 @@
         }
       },
       "LastDesignation": "Senior Software Tester",
-      "DurationMonths": 36
+      "DurationMonths": 36,
+      "Remarks": "NA"
     }
   ]
 },
@@ -464,7 +472,8 @@
         }
       },
       "LastDesignation": "Senior Software Engineer",
-      "DurationMonths": 60
+      "DurationMonths": 60,
+      "Remarks": "NA"
     },
     {
       "Company": {
@@ -474,7 +483,8 @@
         }
       },
       "LastDesignation": "Project Manager",
-      "DurationMonths": 36
+      "DurationMonths": 36,
+      "Remarks": "NA"
     }
   ]
 },
@@ -560,7 +570,8 @@
         }
       },
       "LastDesignation": "Team Leader",
-      "DurationMonths": 48
+      "DurationMonths": 48,
+      "Remarks": "NA"
     },
     {
       "Company": {
@@ -570,7 +581,8 @@
         }
       },
       "LastDesignation": "Project Manager",
-      "DurationMonths": 36
+      "DurationMonths": 36,
+      "Remarks": "NA"
     }
   ]
 }]

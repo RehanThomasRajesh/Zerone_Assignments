@@ -1,0 +1,37 @@
+db.employees.aggregate([
+  {
+    $lookup: {
+      from: "Countries",
+      localField: "Country.$id",
+      foreignField: "_id",
+      as: "CountryInfo"
+    }
+  },
+  {
+    $unwind: "$CountryInfo"
+  },
+  {
+    $lookup: {
+      from: "Currencies",
+      localField: "CountryInfo.Currency.$id",
+      foreignField: "_id",
+      as: "CurrencyInfo"
+    }
+  },
+  {
+    $unwind: "$CurrencyInfo"
+  },
+  {
+    $match: {
+      "CurrencyInfo.Code": "USD"
+    }
+  },
+  {
+    $project: {
+      "_id": 1,
+      "FirstName": 1,
+      "LastName": 1,
+      "Currency": "$CurrencyInfo.Code"
+    }
+  }
+])

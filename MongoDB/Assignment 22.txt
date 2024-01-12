@@ -1,0 +1,22 @@
+db.employees.aggregate([
+  {
+    $unwind: "$Country" // Unwind the array if Country is an array
+  },
+  {
+    $group: {
+      _id: {
+        Country: "$Country",
+        Designation: "$Designation"
+      },
+      avgBasicPay: { $avg: "$BasicPay" }
+    }
+  },
+  {
+    $project: {
+      _id: 0,
+      Country: "$_id.Country",
+      Designation: "$_id.Designation",
+      avgBasicPay: 1
+    }
+  }
+])

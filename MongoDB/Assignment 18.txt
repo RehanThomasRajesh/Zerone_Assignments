@@ -1,0 +1,4 @@
+db.employees.find({
+  "Education.Institution.Name": "IIT Mumbai",
+  $expr: { $gt: [{ $sum: "$WorkExperience.DurationMonths" }, 60] }
+})

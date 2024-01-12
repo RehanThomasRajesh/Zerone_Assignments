@@ -1,0 +1,26 @@
+db.employees.aggregate([
+  {
+    $addFields: {
+      age: {
+        $divide: [
+          { $subtract: [new Date(), "$DOB"] },
+          365.25 * 24 * 60 * 60 * 1000
+        ]
+      }
+    }
+  },
+  {
+    $match: {
+      age: { $gt: 45 }
+    }
+  },
+  {
+    $project: {
+      _id: 0,
+      FirstName: 1,
+      Lastname: 1,
+      DOB: 1,
+      age: { $round: ["$age", 2] }
+    }
+  }
+])

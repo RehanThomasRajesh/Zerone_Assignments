@@ -1,4 +1,4 @@
-db.Employee.find({
+db.employees.find({
   "Designation.$id": {
     $in: [
       ObjectId("659f9585d0cffa14ab5a36d5"),  
