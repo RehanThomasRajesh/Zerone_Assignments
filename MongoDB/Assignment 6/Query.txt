@@ -1,0 +1,3 @@
+db.employees.find(
+  { "Lastname": { $regex: "s", $options: "i" } }
+).sort({ "FirstName": 1 })

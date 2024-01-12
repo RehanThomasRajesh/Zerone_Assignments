@@ -1,0 +1,1 @@
+db.employees.find({ "FirstName": { $regex: "a", $options: "i" } })

@@ -1,0 +1,40 @@
+{
+  _id: ObjectId('652e2f720806e88f50b9c49c'),
+  DOB: 1985-08-12T00:00:00.000Z,
+  BasicPay: 32000,
+  Gender: 'Male',
+  FirstName: 'Amit',
+  Lastname: 'Singh',
+  MobileNumber: 9876123456,
+  PersonalEmail: 'amit.singh@gmail.com',
+  PostalAddress: 'Test Address 5, Marathahalli',
+  City: 'Bangalore',
+  Country: DBRef('countries', ObjectId('659f945fd0cffa14ab5a36d2')),
+  Designation: DBRef('designations', ObjectId('659f9585d0cffa14ab5a36d6')),
+  Education: [
+    {
+      Course: DBRef('courses', ObjectId('659f97c4d0cffa14ab5a36e6')),
+      Specialization: DBRef('specializations', ObjectId('659f9856d0cffa14ab5a36ee')),
+      Institution: DBRef('educationalinstitutions', ObjectId('659f972fd0cffa14ab5a36e2')),
+      Grade: 8.2
+    },
+    {
+      Course: DBRef('courses', ObjectId('659f97c4d0cffa14ab5a36e9')),
+      Specialization: DBRef('specializations', ObjectId('659f9856d0cffa14ab5a36ef')),
+      Institution: DBRef('educationalinstitutions', ObjectId('659f972fd0cffa14ab5a36e5')),
+      Grade: 9
+    }
+  ],
+  WorkExperience: [
+    {
+      Company: DBRef('companies', ObjectId('659f9af9d0cffa14ab5a36f1')),
+      LastDesignation: 'Senior Software Engineer',
+      DurationMonths: 60
+    },
+    {
+      Company: DBRef('companies', ObjectId('659f9af9d0cffa14ab5a36f1')),
+      LastDesignation: 'Project Manager',
+      DurationMonths: 36
+    }
+  ]
+}})

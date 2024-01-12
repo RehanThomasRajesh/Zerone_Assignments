@@ -1,0 +1,576 @@
+[{
+  "_id": {
+    "$oid": "652e2f720806e88f50b9c49c"
+  },
+  "DOB": {
+    "$date": "1985-08-12T00:00:00.000Z"
+  },
+  "BasicPay": 32000,
+  "Gender": "Male",
+  "FirstName": "Amit",
+  "Lastname": "Singh",
+  "MobileNumber": {
+    "$numberLong": "9876123456"
+  },
+  "PersonalEmail": "amit.singh@gmail.com",
+  "PostalAddress": "Test Address 5, Marathahalli",
+  "City": "Bangalore",
+  "Country": {
+    "$ref": "Countries",
+    "$id": {
+      "$oid": "659f945fd0cffa14ab5a36d2"
+    }
+  },
+  "Designation": {
+    "$ref": "Designations",
+    "$id": {
+      "$oid": "659f9585d0cffa14ab5a36d6"
+    }
+  },
+  "Education": [
+    {
+      "Course": {
+        "$ref": "Courses",
+        "$id": {
+          "$oid": "659f97c4d0cffa14ab5a36e6"
+        }
+      },
+      "Specialization": {
+        "$ref": "Specializations",
+        "$id": {
+          "$oid": "659f9856d0cffa14ab5a36ee"
+        }
+      },
+      "Institution": {
+        "$ref": "EducationalInstitutions",
+        "$id": {
+          "$oid": "659f972fd0cffa14ab5a36e2"
+        }
+      },
+      "Grade": 8.2
+    },
+    {
+      "Course": {
+        "$ref": "Courses",
+        "$id": {
+          "$oid": "659f97c4d0cffa14ab5a36e9"
+        }
+      },
+      "Specialization": {
+        "$ref": "Specializations",
+        "$id": {
+          "$oid": "659f9856d0cffa14ab5a36ef"
+        }
+      },
+      "Institution": {
+        "$ref": "EducationalInstitutions",
+        "$id": {
+          "$oid": "659f972fd0cffa14ab5a36e5"
+        }
+      },
+      "Grade": 9
+    }
+  ],
+  "WorkExperience": [
+    {
+      "Company": {
+        "$ref": "Companies",
+        "$id": {
+          "$oid": "659f9af9d0cffa14ab5a36f1"
+        }
+      },
+      "LastDesignation": "Senior Software Engineer",
+      "DurationMonths": 60
+    },
+    {
+      "Company": {
+        "$ref": "Companies",
+        "$id": {
+          "$oid": "659f9af9d0cffa14ab5a36f1"
+        }
+      },
+      "LastDesignation": "Project Manager",
+      "DurationMonths": 36
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "652e2f720806e88f50b9c49d"
+  },
+  "DOB": {
+    "$date": "1988-03-28T00:00:00.000Z"
+  },
+  "BasicPay": 40000,
+  "Gender": "Female",
+  "FirstName": "Priya",
+  "Lastname": "Patel",
+  "MobileNumber": {
+    "$numberLong": "9876547890"
+  },
+  "PersonalEmail": "priya.patel@gmail.com",
+  "PostalAddress": "Test Address 6, Indiranagar",
+  "City": "Bangalore",
+  "Country": {
+    "$ref": "Countries",
+    "$id": {
+      "$oid": "659f945fd0cffa14ab5a36d3"
+    }
+  },
+  "Designation": {
+    "$ref": "Designations",
+    "$id": {
+      "$oid": "659f9585d0cffa14ab5a36da"
+    }
+  },
+  "Education": [
+    {
+      "Course": {
+        "$ref": "Courses",
+        "$id": {
+          "$oid": "659f97c4d0cffa14ab5a36e7"
+        }
+      },
+      "Specialization": {
+        "$ref": "Specializations",
+        "$id": {
+          "$oid": "659f9856d0cffa14ab5a36ec"
+        }
+      },
+      "Institution": {
+        "$ref": "EducationalInstitutions",
+        "$id": {
+          "$oid": "659f972fd0cffa14ab5a36e1"
+        }
+      },
+      "Grade": 8.5
+    },
+    {
+      "Course": {
+        "$ref": "Courses",
+        "$id": {
+          "$oid": "659f97c4d0cffa14ab5a36e8"
+        }
+      },
+      "Specialization": {
+        "$ref": "Specializations",
+        "$id": {
+          "$oid": "659f9856d0cffa14ab5a36ee"
+        }
+      },
+      "Institution": {
+        "$ref": "EducationalInstitutions",
+        "$id": {
+          "$oid": "659f972fd0cffa14ab5a36e0"
+        }
+      },
+      "Grade": 9.3
+    }
+  ],
+  "WorkExperience": [
+    {
+      "Company": {
+        "$ref": "Companies",
+        "$id": {
+          "$oid": "659f9af9d0cffa14ab5a36f2"
+        }
+      },
+      "LastDesignation": "Software Tester",
+      "DurationMonths": 48
+    },
+    {
+      "Company": {
+        "$ref": "Companies",
+        "$id": {
+          "$oid": "659f9af9d0cffa14ab5a36f2"
+        }
+      },
+      "LastDesignation": "Senior Software Tester",
+      "DurationMonths": 36
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "652e2f720806e88f50b9c49e"
+  },
+  "DOB": {
+    "$date": "1993-12-18T00:00:00.000Z"
+  },
+  "BasicPay": 28000,
+  "Gender": "Male",
+  "FirstName": "Kiran",
+  "Lastname": "Raj",
+  "MobileNumber": {
+    "$numberLong": "9876123450"
+  },
+  "PersonalEmail": "kiran.raj@gmail.com",
+  "PostalAddress": "Test Address 7, JP Nagar",
+  "City": "Bangalore",
+  "Country": {
+    "$ref": "Countries",
+    "$id": {
+      "$oid": "659f945fd0cffa14ab5a36d1"
+    }
+  },
+  "Designation": {
+    "$ref": "Designations",
+    "$id": {
+      "$oid": "659f9585d0cffa14ab5a36db"
+    }
+  },
+  "Education": [
+    {
+      "Course": {
+        "$ref": "Courses",
+        "$id": {
+          "$oid": "659f97c4d0cffa14ab5a36e6"
+        }
+      },
+      "Specialization": {
+        "$ref": "Specializations",
+        "$id": {
+          "$oid": "659f9856d0cffa14ab5a36eb"
+        }
+      },
+      "Institution": {
+        "$ref": "EducationalInstitutions",
+        "$id": {
+          "$oid": "659f972fd0cffa14ab5a36dd"
+        }
+      },
+      "Grade": 8.7
+    },
+    {
+      "Course": {
+        "$ref": "Courses",
+        "$id": {
+          "$oid": "659f97c4d0cffa14ab5a36e7"
+        }
+      },
+      "Specialization": {
+        "$ref": "Specializations",
+        "$id": {
+          "$oid": "659f9856d0cffa14ab5a36ed"
+        }
+      },
+      "Institution": {
+        "$ref": "EducationalInstitutions",
+        "$id": {
+          "$oid": "659f972fd0cffa14ab5a36de"
+        }
+      },
+      "Grade": 9.1
+    }
+  ],
+  "WorkExperience": [
+    {
+      "Company": {
+        "$ref": "Companies",
+        "$id": {
+          "$oid": "659f9af9d0cffa14ab5a36f0"
+        }
+      },
+      "LastDesignation": "Project Leader",
+      "DurationMonths": 36
+    },
+    {
+      "Company": {
+        "$ref": "Companies",
+        "$id": {
+          "$oid": "659f9af9d0cffa14ab5a36f0"
+        }
+      },
+      "LastDesignation": "Vice President",
+      "DurationMonths": 24
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "652e2f720806e88f50b9c4a2"
+  },
+  "DOB": {
+    "$date": "1987-07-25T00:00:00.000Z"
+  },
+  "BasicPay": 36000,
+  "Gender": "Male",
+  "FirstName": "Rahul",
+  "Lastname": "Gupta",
+  "MobileNumber": {
+    "$numberLong": "9876123490"
+  },
+  "PersonalEmail": "rahul.gupta@gmail.com",
+  "PostalAddress": "Test Address 11, Whitefield",
+  "City": "Bangalore",
+  "Country": {
+    "$ref": "Countries",
+    "$id": {
+      "$oid": "659f945fd0cffa14ab5a36d2"
+    }
+  },
+  "Designation": {
+    "$ref": "Designations",
+    "$id": {
+      "$oid": "659f9585d0cffa14ab5a36d7"
+    }
+  },
+  "Education": [
+    {
+      "Course": {
+        "$ref": "Courses",
+        "$id": {
+          "$oid": "659f97c4d0cffa14ab5a36e7"
+        }
+      },
+      "Specialization": {
+        "$ref": "Specializations",
+        "$id": {
+          "$oid": "659f9856d0cffa14ab5a36ec"
+        }
+      },
+      "Institution": {
+        "$ref": "EducationalInstitutions",
+        "$id": {
+          "$oid": "659f972fd0cffa14ab5a36e1"
+        }
+      },
+      "Grade": 8.8
+    },
+    {
+      "Course": {
+        "$ref": "Courses",
+        "$id": {
+          "$oid": "659f97c4d0cffa14ab5a36e8"
+        }
+      },
+      "Specialization": {
+        "$ref": "Specializations",
+        "$id": {
+          "$oid": "659f9856d0cffa14ab5a36ed"
+        }
+      },
+      "Institution": {
+        "$ref": "EducationalInstitutions",
+        "$id": {
+          "$oid": "659f972fd0cffa14ab5a36e4"
+        }
+      },
+      "Grade": 9.5
+    }
+  ],
+  "WorkExperience": [
+    {
+      "Company": {
+        "$ref": "Companies",
+        "$id": {
+          "$oid": "659f9af9d0cffa14ab5a36f2"
+        }
+      },
+      "LastDesignation": "Software Tester",
+      "DurationMonths": 48
+    },
+    {
+      "Company": {
+        "$ref": "Companies",
+        "$id": {
+          "$oid": "659f9af9d0cffa14ab5a36f2"
+        }
+      },
+      "LastDesignation": "Senior Software Tester",
+      "DurationMonths": 36
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "652e2f720806e88f50b9c4a3"
+  },
+  "DOB": {
+    "$date": "1990-01-10T00:00:00.000Z"
+  },
+  "BasicPay": 42000,
+  "Gender": "Female",
+  "FirstName": "Divya",
+  "Lastname": "Nair",
+  "MobileNumber": {
+    "$numberLong": "9876548765"
+  },
+  "PersonalEmail": "divya.nair@gmail.com",
+  "PostalAddress": "Test Address 12, Bellandur",
+  "City": "Bangalore",
+  "Country": {
+    "$ref": "Countries",
+    "$id": {
+      "$oid": "659f945fd0cffa14ab5a36d3"
+    }
+  },
+  "Designation": {
+    "$ref": "Designations",
+    "$id": {
+      "$oid": "659f9585d0cffa14ab5a36db"
+    }
+  },
+  "Education": [
+    {
+      "Course": {
+        "$ref": "Courses",
+        "$id": {
+          "$oid": "659f97c4d0cffa14ab5a36e7"
+        }
+      },
+      "Specialization": {
+        "$ref": "Specializations",
+        "$id": {
+          "$oid": "659f9856d0cffa14ab5a36ee"
+        }
+      },
+      "Institution": {
+        "$ref": "EducationalInstitutions",
+        "$id": {
+          "$oid": "659f972fd0cffa14ab5a36e1"
+        }
+      },
+      "Grade": 9.1
+    },
+    {
+      "Course": {
+        "$ref": "Courses",
+        "$id": {
+          "$oid": "659f97c4d0cffa14ab5a36e9"
+        }
+      },
+      "Specialization": {
+        "$ref": "Specializations",
+        "$id": {
+          "$oid": "659f9856d0cffa14ab5a36ef"
+        }
+      },
+      "Institution": {
+        "$ref": "EducationalInstitutions",
+        "$id": {
+          "$oid": "659f972fd0cffa14ab5a36e4"
+        }
+      },
+      "Grade": 9.8
+    }
+  ],
+  "WorkExperience": [
+    {
+      "Company": {
+        "$ref": "Companies",
+        "$id": {
+          "$oid": "659f9af9d0cffa14ab5a36f1"
+        }
+      },
+      "LastDesignation": "Senior Software Engineer",
+      "DurationMonths": 60
+    },
+    {
+      "Company": {
+        "$ref": "Companies",
+        "$id": {
+          "$oid": "659f9af9d0cffa14ab5a36f1"
+        }
+      },
+      "LastDesignation": "Project Manager",
+      "DurationMonths": 36
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "652e2f720806e88f50b9c4a4"
+  },
+  "DOB": {
+    "$date": "1986-05-03T00:00:00.000Z"
+  },
+  "BasicPay": 34000,
+  "Gender": "Male",
+  "FirstName": "Vikram",
+  "Lastname": "Rathore",
+  "MobileNumber": {
+    "$numberLong": "9876123487"
+  },
+  "PersonalEmail": "vikram.rathore@gmail.com",
+  "PostalAddress": "Test Address 13, HSR Layout",
+  "City": "Bangalore",
+  "Country": {
+    "$ref": "Countries",
+    "$id": {
+      "$oid": "659f945fd0cffa14ab5a36d1"
+    }
+  },
+  "Designation": {
+    "$ref": "Designations",
+    "$id": {
+      "$oid": "659f9585d0cffa14ab5a36d8"
+    }
+  },
+  "Education": [
+    {
+      "Course": {
+        "$ref": "Courses",
+        "$id": {
+          "$oid": "659f97c4d0cffa14ab5a36e8"
+        }
+      },
+      "Specialization": {
+        "$ref": "Specializations",
+        "$id": {
+          "$oid": "659f9856d0cffa14ab5a36ee"
+        }
+      },
+      "Institution": {
+        "$ref": "EducationalInstitutions",
+        "$id": {
+          "$oid": "659f972fd0cffa14ab5a36e0"
+        }
+      },
+      "Grade": 8.5
+    },
+    {
+      "Course": {
+        "$ref": "Courses",
+        "$id": {
+          "$oid": "659f97c4d0cffa14ab5a36e9"
+        }
+      },
+      "Specialization": {
+        "$ref": "Specializations",
+        "$id": {
+          "$oid": "659f9856d0cffa14ab5a36ef"
+        }
+      },
+      "Institution": {
+        "$ref": "EducationalInstitutions",
+        "$id": {
+          "$oid": "659f972fd0cffa14ab5a36e2"
+        }
+      },
+      "Grade": 9.2
+    }
+  ],
+  "WorkExperience": [
+    {
+      "Company": {
+        "$ref": "Companies",
+        "$id": {
+          "$oid": "659f9af9d0cffa14ab5a36f2"
+        }
+      },
+      "LastDesignation": "Team Leader",
+      "DurationMonths": 48
+    },
+    {
+      "Company": {
+        "$ref": "Companies",
+        "$id": {
+          "$oid": "659f9af9d0cffa14ab5a36f2"
+        }
+      },
+      "LastDesignation": "Project Manager",
+      "DurationMonths": 36
+    }
+  ]
+}]
