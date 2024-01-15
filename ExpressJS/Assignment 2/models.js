@@ -1,8 +1,6 @@
-// models.js
 
 const mongoose = require('mongoose');
 
-// Define Event schema
 const eventSchema = new mongoose.Schema({
   Title: { type: String, required: true, maxlength: 250 },
   Details: { type: String, required: true, maxlength: 1000 },
@@ -13,7 +11,6 @@ const eventSchema = new mongoose.Schema({
 
 const Event = mongoose.model('Event', eventSchema);
 
-// Wrap the Mongoose queries in promises
 
 function createEvent(eventData) {
   const event = new Event(eventData);
