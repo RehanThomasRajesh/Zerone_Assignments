@@ -1,4 +1,4 @@
-// server.js
+
 
 const express = require('express');
 const bodyParser = require('body-parser');
@@ -9,7 +9,6 @@ const PORT = process.env.PORT || 3000;
 
 app.use(bodyParser.json());
 
-// API routes
 app.post('/api/events', async (req, res) => {
   try {
     const savedEvent = await createEvent(req.body);
@@ -73,7 +72,6 @@ app.delete('/api/events/:eventId', async (req, res) => {
   }
 });
 
-// Start the server
 app.listen(PORT, () => {
   console.log(`Server is running on http://localhost:${PORT}`);
 });
