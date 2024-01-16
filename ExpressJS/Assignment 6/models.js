@@ -14,7 +14,10 @@ const eventSchema = new mongoose.Schema({
   RegistrationLink: { type: String, maxlength: 250, validate: [venueOrRegistrationLinkValidator, 'Either Venue or RegistrationLink is required'] },
 });
 
+
+
 const Event = mongoose.model('Event', eventSchema);
+
 
 // Wrap the Mongoose queries in promises
 

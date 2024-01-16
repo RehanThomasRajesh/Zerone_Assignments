@@ -25,14 +25,14 @@ async function createEventController(req, res) {
     }
   }
 
-async function getEventsController(req, res) {
-  try {
-    const events = await getEvents();
-    res.json({ success: true, data: events });
-  } catch (error) {
-    res.status(500).json({ success: false, error: error.message });
+  async function getEventsController(req, res) {
+    try {
+      const events = await getEventsService();
+      res.json({ success: true, data: events });
+    } catch (error) {
+      res.status(500).json({ success: false, error: error.message });
+    }
   }
-}
 
 async function getEventByIdController(req, res) {
   try {

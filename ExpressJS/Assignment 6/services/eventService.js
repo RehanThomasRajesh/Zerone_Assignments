@@ -1,15 +1,16 @@
 // services/eventService.js
 
-const { Event, createEvent, getEvents, getEventById, getEventsBetweenDates, updateEvent, deleteEvent } = require('../models');
+const { createEvent, getEvents, getEventById, getEventsBetweenDates, updateEvent, deleteEvent } = require('../models');
+const { Event } = require('../models');
 
 async function createEventService(eventData) {
   return createEvent(eventData);
 }
 
 async function getEventsService() {
-    const currentDate = new Date();
-    return Event.find({ On: { $gte: currentDate } }).exec();
-  }
+  const currentDate = new Date();
+  return Event.find({ On: { $gte: currentDate } }).exec();
+}
 
 async function getEventByIdService(eventId) {
   return getEventById(eventId);
