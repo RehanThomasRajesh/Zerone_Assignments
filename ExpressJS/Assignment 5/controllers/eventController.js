@@ -1,4 +1,3 @@
-// controllers/eventController.js
 
 const { createEvent, getFutureEvents, getEventById, getEventsBetweenDates, updateEvent, deleteEvent } = require('../services/eventService');
 

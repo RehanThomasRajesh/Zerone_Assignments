@@ -1,4 +1,3 @@
-// models.js
 
 const mongoose = require('mongoose');
 
@@ -16,7 +15,6 @@ const eventSchema = new mongoose.Schema({
 
 const Event = mongoose.model('Event', eventSchema);
 
-// Wrap the Mongoose queries in promises
 
 function createEvent(eventData) {
   const event = new Event(eventData);
