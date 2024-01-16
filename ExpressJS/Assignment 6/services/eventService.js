@@ -1,4 +1,3 @@
-// services/eventService.js
 
 const { createEvent, getEvents, getEventById, getEventsBetweenDates, updateEvent, deleteEvent } = require('../models');
 const { Event } = require('../models');

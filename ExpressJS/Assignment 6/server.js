@@ -1,10 +1,9 @@
-// server.js
 
 const express = require('express');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 const eventRoutes = require('./routes/eventRoutes');
-const loggerMiddleware = require('./middleware/loggerMiddleware'); // Import the logger middleware
+const loggerMiddleware = require('./middleware/loggerMiddleware'); 
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -33,10 +32,8 @@ mongoose.connection.on('disconnected', () => {
   console.log('Disconnected from MongoDB.');
 });
 
-// Use the logger middleware for all routes
 app.use(loggerMiddleware);
 
-// Use the eventRoutes under the /api path
 app.use('/api', eventRoutes);
 
 app.listen(PORT, () => {
