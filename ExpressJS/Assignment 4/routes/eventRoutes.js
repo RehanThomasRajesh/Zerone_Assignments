@@ -1,9 +1,7 @@
-// routes/eventRoutes.js
 
 const express = require('express');
 const router = express.Router();
-const eventController = require('../controllers/eventController'); // Make sure you import the correct controller
-
+const eventController = require('../controllers/eventController'); 
 router.post('/events', eventController.createEventController);
 router.get('/events', eventController.getEventsController);
 router.get('/events/:id', (req, res) => {
